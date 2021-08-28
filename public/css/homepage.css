@@ -1,0 +1,318 @@
+.banr_headng .slogan {
+    font-family: 'Roboto', sans-serif;
+    text-transform: capitalize;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+.red-rectangle {
+    position: absolute;
+    width: 100%;
+    height: 470px;
+    transform: skew(0deg, -16deg);
+    z-index: -1;
+    margin-top: -194px;
+    background: rgb(243, 87, 86);
+}
+.banr_headng {
+    font-family: Anton;
+    font-size: 72px !important;
+}
+.banner-btn .click_btn {
+    border-radius: 3px;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    color: #fafafa;
+    letter-spacing: 0.3px;
+    position: relative;
+    z-index: 9;
+    font-weight: 300;
+    top: 112px;
+}
+button:hover, button:focus {
+    outline: none !important;
+    border: none;
+}
+.click_btn a, .click_btn button {
+    position: relative;
+    padding: 12px 20px 11px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    background: transparent;
+    border: none;
+}
+.click_btn a:before, .click_btn button:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 6px 10px 0 rgba(94, 94, 94, 0.15);
+    background-color: #f35756;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 3px;
+    transform: skewX(-25deg);
+    -webkit-transform: skewX(-25deg);
+    transition: all 0.7s;
+}
+.click_btn .fa {
+    font-size: 20px;
+    color: #000;
+    margin-left: -9px;
+}
+.click_btn button:hover:before {
+    background: #000;
+}
+.content-area {
+    margin-top: 100px;
+}
+.wat-con {
+    max-width: 222px;
+    margin-bottom: 20px;
+    clear: both;
+}
+h2 {
+    font-family: Anton;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 45px;
+    letter-spacing: 0.04em;
+    color: #f35756;
+}
+h2 span {
+    color: #181818;
+}
+.grey-bg {
+    background: #f2f2f2;
+    transform: skew(0deg, -7deg);
+    height: 500px;
+    margin-top: -60px;
+}
+section.content-area.most-chosen {
+    padding-top: 45px;
+}
+.most-chosen-rgt-img {
+    position: absolute;
+    right: 30px;
+    top: -255px;
+}
+.most-chosen-lft-img {
+    position: absolute;
+    left: 0;
+    top: -215px;
+    text-align: center;
+}
+.most-chosen-lft-img img {
+    max-width: 70%;
+    margin: 0 auto;
+}
+.most-chosen .container {
+    position: relative;
+}
+.your-obj {
+    padding-bottom: 120px;
+}
+.most-chosen-content {
+    margin-top: 30px;
+}
+section.content-area.most-chosen .wat-con {
+    margin: 0 auto;
+    max-width: 100%;
+    box-shadow: 0px 6px 10px rgba(94, 94, 94, 0.15);
+    border-radius: 15px;
+    background: #FAFAFA;
+    text-align: center;
+    position: relative;
+}
+section.content-area.most-chosen .wat-con.con1 .wat-icon img {
+    width: 100%;
+}
+section.content-area.most-chosen .wat-con h4 {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: inherit;
+    letter-spacing: 0.04em;
+    color: #F35756;
+    margin-bottom: 9px;
+    margin-top: 15px;
+}
+section.content-area.most-chosen .wat-con .ceta-title {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: inherit;
+    letter-spacing: 0.04em;
+    color: #181818;
+    padding: 0 10px 0px;
+    display: block;
+    width: 100%;
+}
+.most-chosen .click_btn {
+    position: relative;
+    z-index: 9;
+    bottom: -20px;
+}
+.mt-110 {
+    margin-top: 110px !important;
+}
+.quote-icon {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+.quote-slides p {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #181818;
+}
+.quote-user {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: #181818;
+    margin-top: 44px;
+}
+.owl-nav {
+    max-width: 48px;
+    margin: 5px auto 0;
+    width: 100%;
+}
+.team_membar.carousel_team_blk {
+    max-width: 617px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+.owl-prev, .owl-next {
+    float: left;
+    margin: 0 5px;
+}
+.owl-controls .owl-next i.fa:hover, .owl-controls .owl-prev i.fa:hover {
+    color: #F35756;
+}
+section.instagram-feed {
+    height: auto;
+    overflow: hidden;
+}
+.instagram-feed-con {
+    margin-top: 30px;
+}
+.instagram-feed ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.instagram-feed ul li {
+    float: left;
+    max-width: 20%;
+}
+.instagram-feed ul li img {
+    width: 100%;
+}
+.main_div {
+    position: relative;
+    overflow: visible;
+    height: auto;
+}
+.wat-con h4 {
+    margin-top: 20px;
+}
+.content-area.homepage-content-main {
+    margin-top: 250px;
+}
+.categories-row {
+    margin-top: 50px;
+}
+h4.ceta-title {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: inherit;
+    letter-spacing: 0.04em;
+    color: #F35756;
+    margin-bottom: 9px;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+.ceta-con-main {
+    border: 0;
+    margin-bottom: 50px;
+    position: relative;
+}
+.ceta-des {
+    margin-bottom: 10px;
+}
+.ceta-top {
+    padding: 0 15px;
+    border: 1px solid #f2f2f2;
+}
+.ceta-img img {
+    width: 100%;
+}
+.rectangle-shape {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /*    border-top: 50px solid transparent;
+          border-right: 100px solid red;
+          border-bottom: 50px solid transparent;*/
+}
+
+@media (max-width: 991px){
+    .banner_sec .pull-right {
+        float: left;
+    }
+    .wat-con {
+        max-width: 222px;
+        margin-bottom: 0;
+        clear: both;
+        float: left !important;
+        margin-top: 20px;
+    }
+    .wat-con h4 {
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 5px;
+    }
+    .most-chosen-rgt-img {
+        top: -145px;
+    }
+    .most-chosen-lft-img {
+        top: -185px;
+    }
+    .most-chosen-rgt-img img.img-fluid {
+        max-width: 125px;
+    }
+    .most-chosen-lft-img img.img-fluid {
+        max-width: 115px;
+    }
+    section.content-area.most-chosen .col-md-4.offset-4 {
+        margin: 0;
+    }
+    .instagram-feed ul li {
+        float: left;
+        max-width: 50%;
+        width: 100%;
+    }
+
+}

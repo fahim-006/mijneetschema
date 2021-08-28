@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/style.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/slick.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/slick-theme.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/font-awesome.min.css" />
+
+    <!-- Custom styles for this template-->
+    <link href="%PUBLIC_URL%/css/dashboard.css" rel="stylesheet" />
+    <link href="%PUBLIC_URL%/css/custom-dashboard.css" rel="stylesheet" />
+
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Mijneetscheema</title>
+  </head>
+  <body class="qa_page">
+    <div class="main_div">
+      <div class="red-rectangle"></div>
+      <div id="root"></div>
+    </div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfzD5UiK1mk_BBZ9vhAaYLAGGA3VvDaSM&libraries=places"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/js/slick.min.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/js/bootstrap.min.js"></script>
+
+    <!--dashboard script-->
+    <!-- Bootstrap core JavaScript-->
+    <script type="text/javascript" src="%PUBLIC_URL%/js/jquery.min.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script type="text/javascript" src="%PUBLIC_URL%/js/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script type="text/javascript" src="%PUBLIC_URL%/js/custom.min.js"></script>
+
+    <!-- Fontawesome 6 Kit -->
+    <script type="text/javascript" src="https://kit.fontawesome.com/782435e55c.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".insta_slider-wrap").slick({
+          infinite: true,
+          slidesToShow: 6,
+          slidesToScroll: 6,
+          arrows: false,
+        });
+      });
+      $(document).ready(function () {
+        var table = $("#example").DataTable({
+          fixedHeader: true,
+        });
+      });
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/js/slick.min.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/js/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/js/owl.carousel.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"
+    ></script>
+    <script id="dataTable">
+      $(document).ready(function () {
+        $("#example").DataTable();
+      });
+    </script>
+    <script>
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        dots: true,
+        nav: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        navText: [
+          "<i class='fa fa fa-chevron-left'></i>",
+          "<i class='fa fa fa-chevron-right'></i>",
+        ],
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 3,
+          },
+        },
+      });
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".insta_slider-wrap").slick({
+          infinite: true,
+          slidesToShow: 6,
+          slidesToScroll: 6,
+          arrows: false,
+        });
+      });
+    </script>
+    <!-- <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("July 20, 2020 15:37:25").getTime();
+
+      // Update the count down every 1 second
+      var x = setInterval(function () {
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("timer").innerHTML =
+          days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("timer").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+    </script> -->
+
+    <!--SCRIPT FOR SELECT BOX FOR SORTING STARS-->
+    <!-- <script>
+      var x, i, j, l, ll, selElmnt, a, b, c;
+      /*look for any elements with the class "custom-select":*/
+      x = document.getElementsByClassName("custom-select");
+      l = x.length;
+      for (i = 0; i < l; i++) {
+        selElmnt = x[i].getElementsByTagName("select")[0];
+        ll = selElmnt.length;
+        /*for each element, create a new DIV that will act as the selected item:*/
+        a = document.createElement("DIV");
+        a.setAttribute("class", "select-selected");
+        a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+        x[i].appendChild(a);
+        /*for each element, create a new DIV that will contain the option list:*/
+        b = document.createElement("DIV");
+        b.setAttribute("class", "select-items select-hide");
+        for (j = 1; j < ll; j++) {
+          /*for each option in the original select element,
+                         create a new DIV that will act as an option item:*/
+          c = document.createElement("DIV");
+          c.innerHTML = selElmnt.options[j].innerHTML;
+          c.addEventListener("click", function (e) {
+            /*when an item is clicked, update the original select box,
+                             and the selected item:*/
+            var y, i, k, s, h, sl, yl;
+            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+            sl = s.length;
+            h = this.parentNode.previousSibling;
+            for (i = 0; i < sl; i++) {
+              if (s.options[i].innerHTML == this.innerHTML) {
+                s.selectedIndex = i;
+                h.innerHTML = this.innerHTML;
+                y = this.parentNode.getElementsByClassName("same-as-selected");
+                yl = y.length;
+                for (k = 0; k < yl; k++) {
+                  y[k].removeAttribute("class");
+                }
+                this.setAttribute("class", "same-as-selected");
+                break;
+              }
+            }
+            h.click();
+          });
+          b.appendChild(c);
+        }
+        x[i].appendChild(b);
+        a.addEventListener("click", function (e) {
+          /*when the select box is clicked, close any other select boxes,
+                         and open/close the current select box:*/
+          e.stopPropagation();
+          closeAllSelect(this);
+          this.nextSibling.classList.toggle("select-hide");
+          this.classList.toggle("select-arrow-active");
+        });
+      }
+      function closeAllSelect(elmnt) {
+        /*a function that will close all select boxes in the document,
+                     except the current select box:*/
+        var x,
+          y,
+          i,
+          xl,
+          yl,
+          arrNo = [];
+        x = document.getElementsByClassName("select-items");
+        y = document.getElementsByClassName("select-selected");
+        xl = x.length;
+        yl = y.length;
+        for (i = 0; i < yl; i++) {
+          if (elmnt == y[i]) {
+            arrNo.push(i);
+          } else {
+            y[i].classList.remove("select-arrow-active");
+          }
+        }
+        for (i = 0; i < xl; i++) {
+          if (arrNo.indexOf(i)) {
+            x[i].classList.add("select-hide");
+          }
+        }
+      }
+      /*if the user clicks anywhere outside the select box,
+                 then close all select boxes:*/
+      document.addEventListener("click", closeAllSelect);
+    </script> -->
+    <!--SCRIPT FOR SELECT BOX FOR SORTING ENDS-->
+  </body>
+</html>

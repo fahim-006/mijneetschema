@@ -1,0 +1,1922 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+/*===============global css start===============*/
+body{
+	font-family: 'Rubik', sans-serif;
+}
+.site_heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 30px;
+	font-family: 'Anton', sans-serif;
+}
+.site_heading span {
+    color: #fd5353;
+}
+.rltv_item {
+    position: relative;
+}
+/*===============global css ends===============*/
+
+
+/*===============Trainer checkout page css start===============*/
+.pay_amnt_chkout {
+    text-align: center;
+}
+.checkout-t .ep_inner p.subheading_dp_sec {
+    margin-bottom: 5px;
+}
+.pay_amnt_chkout {
+    font-size: 17px;
+    color: #333;
+    font-weight: 500;
+}
+.pay_amnt_chkout span {
+    color: #f35756;
+    font-weight: bold;
+    font-size: 22px;
+    font-style: italic;
+}
+.pay_method_item {
+    background: #f35756;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    align-items: center;
+	line-height: 1;
+}
+.pay_mthd_wrap {
+    margin-top: 25px;
+	padding: 0 40px;
+}
+.pay_method_icon {
+    font-size: 42px;
+}
+.pay_mthd_wrap a:hover {
+    text-decoration: none;
+}
+.pay_method_txt {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+.checkout-t .ep_inner {
+    max-width: 570px;
+}
+.card_info_wrap {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 20px 20px 30px 20px;
+}
+.card_info_wrap form .form_grp input {
+    height: 42px;
+    border-radius: 3.5px;
+    box-shadow: 0 5.3px 8.8px 0 rgba(94, 94, 94, 0.15);
+    border: solid 0.4px #828282;
+    background-color: #fafafa;
+    width: 100%;
+    font-size: 13px;
+    font-family: Rubik;
+    letter-spacing: 0.21px;
+    padding: 0 22px;
+    text-transform: capitalize;
+}
+.card_info_wrap form .form_grp {
+    margin-bottom: 20px;
+	flex: 0 0 100%;
+    max-width: 100%;
+}
+.card_info_wrap form .form-grp_row {
+    display: flex;
+    flex-wrap: wrap;
+    display: -webkit-flex;
+	justify-content:space-between;
+}
+.card_info_wrap form .form-grp_row.frm_grp_half .form_grp {
+    flex: 0 0 48%;
+}
+.card_head {
+    margin-bottom: 14px;
+    font-size: 16px;
+    color: #333;
+    position: relative;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.card_info_wrap form .form_grp.submit_wrap {
+    background: #f35756;
+    text-align: center;
+	margin-bottom: 0;
+}
+.card_info_wrap form .form_grp.submit_wrap a {
+    color: #fff;
+    width: 100%;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+.main_div.t_check_wrap:before {
+    top: -70.5%;
+}
+/*===============Trainer checkout page css ends===============*/
+
+
+/*===============Trainer subscription page css start===============*/
+.subscription_item {
+    box-shadow: 0 6px 10px 0 rgba(94, 94, 94, 0.15);
+    border: solid 1px #f2f2f2;
+    padding: 0;
+    text-align: center;
+	background: #fff;
+}
+.sbscrb_price {
+    display: flex;
+	display: -webkit-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+	margin-bottom: 35px;
+}
+.sbscrb_head {
+    font-family: Anton;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    background: #181818;
+    color: #fff;
+    padding: 6px;
+    letter-spacing: 0.5px;
+}
+.subscription_cntnt{
+	padding:0px 25px 30px 25px;
+}
+.sbscrb_price span {
+    flex: 0 0 100%;
+    color: #555;
+    font-style: italic;
+    font-size: 15px;
+	position: relative;
+}
+.sbscrb_price span:before {
+    content: "";
+    width: 45px;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background: #f35756;
+    right: 0;
+    margin: 0 auto;
+}
+.sbscrb_price b {
+    color: #f35756;
+    font-size: 50px;
+    font-weight: 500;
+	line-height: 1.2;
+}
+.sbscrb_list p {
+    margin: 0;
+    font-size: 14px;
+    color: #888;
+}
+.sbscrb_btn a {
+    position: relative;
+    padding: 9px 20px;
+    z-index: 9;
+    color: #fff;
+    width: 55%;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    font-weight: normal;
+}
+.sbscrb_btn a:hover{
+	text-decoration:none;
+}
+.sbscrb_btn a:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 6px 10px 0 rgba(94, 94, 94, 0.15);
+    background-color: #f35756;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 3px;
+    transform: skewX(-25deg);
+    -webkit-transform: skewX(-25deg);
+}
+.sbscrb_btn {
+    margin-top: 25px;
+}
+.heading_dp_sec.subscription_heading {
+    margin-bottom: 50px !important;
+}
+.main_div.trainer_sbscription_page:before {
+    top: -66.5%;
+}
+/*===============Trainer subscription page css ends===============*/
+
+
+/*===============trainer login register page css start===============*/
+.rltv_item span {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	color: #f35756;
+	font-size: 18px;
+}
+.login_screen .login_icon img {
+    max-width: 55px;
+}
+.login_screen .mail_input_epi .form_group input::placeholder {
+    color: #555;
+    opacity: 0.4;
+    text-transform: capitalize;
+}
+.login_screen .mail_input_epi .form_group input {
+    font-size: 15px;
+    text-align: left;
+    color: #333;
+    font-weight: normal;
+	height: 46.7px;
+}
+.login_screen .mail_input_epi .form_group {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.login_screen .mail_input_epi .form_group p.error_mesage {
+    position: absolute;
+    font-size: 11px;
+    color: #f35756;
+    bottom: -18px;
+    margin: 0;
+}
+
+.main_div.register_wrap:before {
+    top: -72.5%;
+}
+/*===============trainer login register page css ends===============*/
+
+
+/*===============email plan page css start===============*/
+.mail_input_epi .form_grp_checkbox label a {
+    color: #555;
+    text-decoration: underline;
+}
+.main_div.email_plan-wrap:before {
+    top: -64.5%;
+}
+.ep_inner {
+    max-width: 650px;
+    margin: 0 auto;
+    box-shadow: 0 6px 10px 0 rgba(94, 94, 94, 0.15);
+    padding: 35px 20px 45px 20px;
+	border: 1px solid #eee;
+}
+.mail_input_epi .form_grp_checkbox label {
+    font-size: 15px;
+    color: #555;
+}
+.ep_mail_icon img {
+    max-width: 50px;
+}
+.ep_mail_icon {
+    text-align: center;
+}
+.email_paln_items .ep_inner .heading_dp_sec {
+    margin: 20px 0 0px 0;
+}
+.ep_inner .subheading_dp_sec {
+    font-size: 15px;
+    text-align: center;
+    color: #777;
+}
+.mail_input_epi .form_group input {
+    height: 48.7px;
+    border-radius: 3.5px;
+    box-shadow: 0 5.3px 8.8px 0 rgba(94, 94, 94, 0.15);
+    border: solid 0.4px #828282;
+    background-color: #fff;
+    width: 100%;
+    font-size: 16px;
+    font-family: Rubik;
+    letter-spacing: 0.21px;
+    padding: 0 22px;
+    text-align: center;
+    color: #f35756;
+    font-weight: 500;
+}
+.mail_input_epi .form_group input::placeholder{
+	 color: #f35756;
+	 opacity:0.4;
+	 text-transform: uppercase;
+}
+.mail_input_epi .form_group {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+.mail_input_epi .form_grp_checkbox, .mail_input_epi .form_group_submit {
+    max-width: 80%;
+    margin: 0 auto;
+}
+.mail_input_epi .form_group_submit {
+    margin-top: 30px;
+}
+.mail_input_epi .form_group_submit a {
+    display: inline-block;
+    background: #f35756;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 12px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+.mail_input_epi .form_group_submit button {
+    display: inline-block;
+    background: #f35756;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 12px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    border: none;
+}
+.mail_input_epi .form_grp_checkbox .custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #f35756;
+    background-color: #f35756;
+}
+.mail_input_epi .form_grp_checkbox input{
+	outline: -webkit-focus-ring-color auto 0px !important;
+}
+.mail_input_epi .form_grp_checkbox .custom-control-input:focus~.custom-control-label::before {
+    box-shadow: 0 0 0 0rem rgba(0,123,255,.25);
+}
+/*===============email plan page css ends===============*/
+
+
+
+/*===============diet plan page css start===============*/
+.main_div.diet_plan-wrap:before {
+    top: -80.5%;
+    left: -19%;
+}
+.steps_result .banr_image {
+    right: -80px;
+    top: -20px;
+}
+.steps_result .banr_image img {
+    max-width: 280px;
+}
+.heading_dp_sec {
+    font-family: Anton;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin: 20px 0 35px 0;
+    text-align: center;
+}
+.steps_result .banner_txt {
+    max-width: 630px;
+    margin: 0 auto;
+}
+.steps_result .banner_txt .banr_headng{
+	font-size: 91px;
+}
+.diet_paln_items, .email_paln_items {
+    margin-top: 140px;
+	margin-bottom: 85px;
+}
+.icon_diet_item {
+    width: 60px;
+    height: 66px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+.hdng_diet_item {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+	text-align: center;
+	color: #f35756;
+}
+.icon_diet_item img{
+    max-width: 100%;
+}
+.diet_item {
+    min-height: 300px;
+    box-shadow: 0 6px 10px 0 rgba(94, 94, 94, 0.15);
+    padding: 20px;
+	border-radius: 8px;
+}
+.data_diet_item {
+    text-align: center;
+}
+.data_diet_item ul {
+    margin: 0;
+    padding: 0;
+}
+.data_diet_item ul li {
+    list-style: none;
+    line-height: 2.0;
+}
+
+.meal_wrap {
+    background: #fff;
+    padding: 30px 0;
+	position: relative;
+	overflow: hidden;
+}
+.meal_wrap_img {
+    text-align: center;
+}
+.meal_wrap_desc {
+    padding: 35px 0 35px 0;
+	text-align: center;
+}
+.meal_wrap_img {
+    max-width: 80%;
+    margin: 0 auto;
+}
+.meal_wrap_desc h3 {
+    font-family: Anton;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.meal_wrap_desc p {
+    font-style: italic;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #555;
+	margin: 28px 0 20px 0;
+}
+.meal_wrap_desc p span {
+    color: #f35756;
+    font-weight: bold;
+}
+.meal_wrap_desc a {
+    display: inline-block;
+    color: #fff;
+    background: transparent;
+    position: relative;
+    z-index: 9;
+    padding: 8px 30px;
+    text-transform: uppercase;
+    font-size: 15px;
+	margin-left: 0px;
+}
+.meal_wrap_desc a:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 6px 10px 0 rgba(94, 94, 94, 0.15);
+    background-color: #f35756;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 3px;
+    transform: skewX(-25deg);
+    -webkit-transform: skewX(-25deg);
+}
+.meal_wrap_img img {
+    width: 85%;
+}
+.meal_wrap:before {
+    content: "";
+    width: 285px;
+    height: 285px;
+    background-image: url(../images/Plated-meals_Protein-plus2.png);
+    position: absolute;
+    right: -42px;
+    top: -42px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 0.2;
+    background-position: top right;
+    transform: rotate(48deg);
+	-webkit-transform: rotate(48deg);
+}
+/*.meal_wrap:after {
+    content: "";
+    width: 546px;
+    height: 646px;
+    background-image: url(../images/leaf.png);
+    position: absolute;
+    left: 65px;
+    top: -81px;
+    background-repeat: no-repeat;
+    background-size: 51%;
+    opacity: 1;
+    background-position: bottom left;
+    transform: rotate(-193deg) scaleX(-1);
+	-webkit-transform: rotate(-193deg) scaleX(-1);
+}*/
+.meal_wrap:after {
+    content: "";
+    width: 546px;
+    height: 646px;
+    background-image: url(../images/leaf.png);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: 51%;
+    opacity: 1;
+    background-position: bottom left;
+    transform: rotate(-281deg) scaleX(-1);
+    -webkit-transform: rotate(-281deg) scaleX(-1);
+}
+.meal_wrap_desc .timer {
+    color: #f35756;
+    text-transform: capitalize;
+    font-size: 17px;
+}
+.meal_wrap_desc .timer span#timer {
+    font-weight: bold;
+	font-size: 18px;
+}
+/*===============diet plan psge css ends===============*/
+
+
+
+/*===========header and menu css start==========*/
+.menu_wrap .navbar-nav li.nav-item a:hover {
+    color: #fff;
+}
+nav.navbar {
+    padding: 0;
+	align-items: flex-start;
+}
+a.navbar-brand {
+    margin: 0;
+    padding: 0;
+}
+.logo_wrap {
+    max-width: 190px;
+    background: #181818;
+    position: relative;
+    padding: 0 0px 0 0px;
+}
+.logo_wrap:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 40px 190px 0 0;
+    border-color: #181818 transparent transparent transparent;
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+}
+.mail_info {
+    margin: 0 25px;
+}
+.topbar {
+    justify-content: flex-end;
+    padding-top: 15px;
+	align-items: center;
+}
+.topbar a {
+    color: #fff;
+}
+.phone_info a, .mail_info a {
+    display: flex;
+    align-items: self-start;
+    display: -webkit-flex;
+}
+.mail_info a{
+	align-items: center;
+}
+.phone_info a img, .mail_info a img{
+	margin-right:10px;
+}
+.social_icon {
+    margin-left: 35px;
+}
+.phone_info, .mail_info {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.24px;
+}
+.phone_info a:hover, .mail_info a:hover{
+	text-decoration:none;
+}
+.social_icon a {
+    margin-left: 10px;
+}
+.social_icon a:first-child {
+    margin-left: 0px;
+}
+.phone_info a i, .mail_info a i {
+    margin-right: 5px;
+}
+.menu_wrap .navbar-nav li.nav-item a {
+    color: #000;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+	margin-left: 20px;
+	font-weight:bold;
+	position:relative;
+}
+.menu_wrap .navbar-nav li.nav-item.active a {
+    color: #fff;
+}
+.menu_wrap .navbar-nav li.nav-item.active a:before {
+    content: "";
+    width: 60%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.menu_wrap ul.navbar-nav {
+    margin-left: auto;
+	margin-top: 20px;
+}
+/*===========header and menu css ends==========*/
+
+/*===========category section start==========*/
+
+.ctgry_head {
+    padding: 10px 20px;
+	border: 1px solid #ddd;
+}
+.ctgry_head h3 {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #fd5353;
+}
+.ctgry_img img {
+    width: 100%;
+}
+.ctgry_img {
+    min-height: 270px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.ctgry_img_wrap {
+    position: relative;
+}
+/*===========category section ends==========*/
+
+/*===========instagram section start==========*/
+.instagram-sec {
+    margin-top: 80px;
+}
+.insta_slider_item img {
+    max-width: 100%;
+}
+.insta_slider_item:focus{
+	outline: -webkit-focus-ring-color auto 0px;
+}
+/*===========instagram section ends==========*/
+
+
+/*===========overige-producten css start==========*/
+.overige-producten-step .quiz_qa_head {
+    margin: 0 -50px;
+}
+.quiz_qa.steps_slct.overige-producten-step {
+    padding: 40px 90px 10px 90px;
+}
+.steps_slct.overige-producten-step .quiz_qa_head h3 {
+    margin-bottom: 35px;
+}
+.quiz_qa.steps_slct.overige-producten-step .quiz_qa_footer {
+    margin-top: 44px;
+}
+/*===========overige-producten css ends==========*/
+
+
+/*===========bodytype page css start==========*/
+.quiz_qa.steps_slct.bodytype {
+    background-color: #f6f7f8;
+    padding: 35px 30px 10px 30px;
+	margin-bottom: 182px;
+}
+.quiz_qa.steps_slct.bodytype .quiz_qa_head h3 {
+    margin-bottom: 14px;
+}
+.quiz_qa.steps_slct.bodytype .quiz_qa_footer.nf_ftr {
+    margin: 8px 0px 0px 0px;
+}
+.quiz_qa.steps_slct.bodytype .select_item .inputGroup label {
+    font-size: 12px;
+}
+.bodytype_image {
+    margin-bottom: 6px;
+}
+.bodytype_dropdown button, .bodytype_dropdown button:hover, .bodytype_dropdown button:focus {
+    background: transparent !important;
+    border: 0;
+    font-family: Rubik;
+    font-size: 9px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.11;
+    letter-spacing: 0.18px;
+    color: #828282 !important;
+    padding: 0;
+    text-decoration: underline;
+    box-shadow: none !important;
+}
+.bodytype_dropdown button::after{
+	display:none;
+}
+.bodytype_dropdown .dropdown-menu {
+    border-radius: 6px;
+    box-shadow: 0 6px 10px 0 rgba(94, 94, 94, 0.15);
+    border: solid 1px #f2f2f2;
+    background-color: #fafafa;
+}
+.bodytype_dropdown .dropdown-menu {
+    border-radius: 6px;
+    box-shadow: 0 6px 10px 0 rgba(94, 94, 94, 0.15);
+    border: solid 1px #f2f2f2;
+    background-color: #fafafa;
+    padding: 12px 24px 12px 20px;
+    margin: 0;
+	left: -10px !important;
+    top: -2px !important;
+}
+.bodytype_dropdown .dropdown-menu a.dropdown-item {
+    font-family: Rubik;
+    font-size: 9px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.11;
+    letter-spacing: 0.18px;
+    color: #333333;
+    padding: 0;
+	position:relative;
+}
+.bodytype_dropdown .dropdown-menu a.dropdown-item:focus{
+	background:transparent;
+}
+.bodytype_dropdown .dropdown-menu a.dropdown-item i {
+    position: absolute;
+    left: -12px;
+    top: 6px;
+    font-size: 6px;
+}
+/*===========bodytype page css ends==========*/
+
+
+/*===========activity step css start==========*/
+.activity_step .quiz_qa_content .select_item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 4px;
+}
+.activity_step .quiz_qa_content .select_item label {
+    font-size: 12px;
+    text-align: center;
+    padding: 0 35px 0 35px !important;
+}
+.steps_slct.activity_step .quiz_qa_footer {
+    margin-top: 18px;
+}
+/*===========activity step css ends==========*/
+
+/*===========finish page css start==========*/
+.quiz_qa.steps_slct.fnsh_page {
+    padding: 51px 106px 41px 106px;
+}
+.finish_wrap {
+    width: 328px;
+    height: 328px;
+    background-image: url(../images/bg_thank.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+	padding: 25px;
+	margin: 0 auto;
+}
+.finish_wrap h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0.4px;
+    color: #181818;
+}
+.divider-152 {
+    height: 152px;
+}
+/*===========finish page css ends==========*/
+
+
+/*===========allergen page css start==========*/
+.quiz_qa.steps_slct.alergen {
+    padding: 25px 90px 10px 90px;
+}
+.alergen .select_item .inputGroup label.small {
+    line-height: 1.1;
+    font-size: 10px;
+    padding: 7px 11px 0 49px !important;
+    text-align: center;
+}
+.steps_slct.alergen .quiz_qa_head h3 {
+    margin-bottom: 48px;
+}
+.steps_slct.alergen .quiz_qa_footer {
+    margin-top: 125px;
+}
+.alergen .form_group-row .form_group input.form_input {
+    height: 37px;
+	font-size: 12px;
+}
+.alergen .form_group-row .form_group {
+    margin-bottom: 0;
+}
+.alergen .select_item .inputGroup label {
+    font-size: 12px;
+}
+/*===========allergen page css ends==========*/
+
+
+/*===========metingen page css start==========*/
+.quiz_qa.metingen {
+    padding: 34px 112px 10px 112px;
+}
+.quiz_qa.metingen .quiz_qa_footer.nf_ftr {
+    margin: 13px -80px 0px -80px;
+}
+.quiz_qa.metingen .quiz_qa_head h3 {
+    margin-bottom: 28px;
+}
+.form_group .form_input {
+    height: 32.7px;
+    border-radius: 3.5px;
+    box-shadow: 0 5.3px 8.8px 0 rgba(94, 94, 94, 0.15);
+    border: solid 0.4px #828282;
+    background-color: #fafafa;
+    width: 100%;
+}
+.form_group-row .form_group {
+	flex:0 0 100%;
+    max-width: 100%;
+	margin-bottom: 13px;
+	position: relative;
+}
+.form_group-row .form_group .unit {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+    font-family: Rubik;
+    font-size: 10.6px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 0.83;
+    letter-spacing: 0.21px;
+    color: #f35756;
+    text-transform: uppercase;
+}
+.form_group-row {
+    flex-wrap: wrap;
+}
+.form_group .form_input {
+    height: 32.7px;
+    border-radius: 3.5px;
+    box-shadow: 0 5.3px 8.8px 0 rgba(94, 94, 94, 0.15);
+    border: solid 0.4px #828282;
+    background-color: #fafafa;
+    width: 100%;
+    font-size: 10.6px;
+    font-family: Rubik;
+    letter-spacing: 0.21px;
+    padding: 0 22px;
+	text-transform: uppercase;
+}
+.form_group .form_input::placeholder{
+	color: #bdbdbd;
+	opacity:1;
+}
+/*===========metingen page css ends==========*/
+
+
+
+/*===========jouw doel css start==========*/
+.quiz_qa.jouw_doel {
+    padding: 20px 33px 20px 33px;
+}
+.quiz_qa.jouw_doel .quiz_qa_head h3 {
+    margin-bottom: 5px;
+}
+.quiz_qa.jouw_doel .quiz_qa_head p {
+    text-align: center;
+    letter-spacing: 0.24px;
+    color: #4f4f4f;
+    font-size: 12px;
+    margin-bottom: 28px;
+    line-height: 1.2;
+}
+.quiz_qa.jouw_doel .quiz_qa_footer .nxt_btn {
+    margin-right: 0;
+}
+.jouw_doel_slct h3 {
+    font-size: 14px;
+    letter-spacing: 0.28px;
+    color: #181818;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 0;
+    display: flex;
+	display: -webkit-flex;
+    justify-content: center;
+    height: 54px;
+    align-items: center;
+}
+.jouw_doel_slct p {
+    font-size: 12px;
+    letter-spacing: 0.24px;
+    color: #828282;
+    font-weight: 300;
+    text-align: center;
+    line-height: normal;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    display: -webkit-flex;
+    height: 42px;
+}
+.jouw_slct_wrap.inputGroup label {
+    padding: 12px 25px;
+}
+/*===========jouw doel css ends==========*/
+
+
+
+/*===========Selecteer jouw groente css start==========*/
+.quiz_qa.steps_slct.overige-producten-step.jouw-groente .quiz_qa_head h3 {
+    margin-bottom: 45px;
+}
+.quiz_qa.steps_slct.overige-producten-step.jouw-groente .quiz_qa_head {
+    margin: 0 0px;
+}
+.quiz_qa.steps_slct.overige-producten-step .quiz_qa_footer {
+    margin-top: 34px;
+}
+/*===========Selecteer jouw groente css ends==========*/
+
+
+/*===========Selecteer jouw vleesproducten css start==========*/
+.quiz_qa.steps_slct.jouw-vleesproducten {
+    padding: 40px 90px 10px 90px;
+}
+.quiz_qa.steps_slct.jouw-vleesproducten .quiz_qa_head h3 {
+    margin-bottom: 70px;
+}
+.quiz_qa.steps_slct.jouw-vleesproducten .quiz_qa_footer {
+    margin-top: 66px;
+}
+/*===========Selecteer jouw vleesproducten css ends==========*/
+
+
+/*===========multiple step check multi css start==========*/
+
+.quiz_step_menu.mt-30 {
+    margin-top: 30px;
+}
+.steps_slct .quiz_qa_head h3 {
+    margin-bottom: 20px;
+	text-transform: uppercase;
+
+}
+.nf_ftr.quiz_qa_footer {
+    margin: 2px -50px 0px -50px;
+}
+.nf_ftr.quiz_qa_footer .nxt_btn {
+    margin-right: 0;
+}
+.select_item {
+    flex: 0 0 140px;
+    max-width: 140px;
+	margin-bottom: 20px;
+}
+.quiz_qa.steps_slct {
+    padding: 22px 90px 10px 90px;
+}
+.select_item .inputGroup label:after {
+    position: absolute;
+    left: 11px;
+	top: 17px;
+}
+.select_item .inputGroup label {
+    font-size: 11px;
+    letter-spacing: 0.22px;
+    color: #333333 !important;
+    margin: 0;
+    padding: 0 11px 0 49px !important;
+    min-height: 35px;
+    line-height: 35px;
+    border-radius: 4px;
+    box-shadow: 0 6px 10px 0 rgba(94, 94, 94, 0.15);
+    border: solid 0.5px #828282;
+    background-color: #fafafa;
+}
+.check_multiple {
+    flex-wrap: wrap;
+}
+.quiz_qa.steps_slct {
+    min-height: 423px;
+}
+/*===========multiple step check multi css ends==========*/
+
+/*===========QA menu css start==========*/
+.step_menu_inner ul li.active_menu {
+    background: #f35756;
+    border-color: #f35756;
+}
+.step_menu_inner ul li.bd_top:last-child::before{
+	width: 103px;
+}
+.step_menu_inner ul li.bd_top:before {
+    content: "";
+    height: 5px;
+    width: 102px;
+    position: absolute;
+    background: #181818;
+    left: -1px;
+    top: -6px;
+}
+.step_menu_inner ul {
+    margin: 0;
+    padding: 0;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.step_menu_inner ul li {
+	  position: relative;
+    list-style: none;
+    flex: 0 0 102px;
+    max-width: 102px;
+    min-height: 123px;
+    color: #fff;
+    background: #333333;
+    text-align: center;
+    display: flex;
+    display: -webkit-flex;
+	flex-wrap:wrap;
+	padding: 0px;
+	border: 1px solid #6e6e6e;
+	border-left: 0;
+}
+.step_menu_inner ul li a {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+	padding: 8px;
+	width: 100%;
+}
+.step_menu_inner ul li a:hover, .step_menu_inner ul li a:focus{
+	text-decoration:none;
+}
+span.qsm_icon {
+    display: flex;
+	display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    margin-bottom: 12px;
+    margin-top: 10px;
+}
+span.qsm_txt {
+    display: flex;
+	display: -webkit-flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.step_menu_inner ul li:first-child{
+	border-left: 1px solid #6e6e6e;
+}
+span.qsm_icon {
+    font-size: 40px;
+}
+.qsm_txt {
+    line-height: normal;
+    font-size: 9.2px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fafafa;
+    letter-spacing: 0.18px;
+}
+.step_menu_inner ul li span{
+	flex:0 0 100%;
+	max-width:100%;
+}
+.quiz_step_menu {
+    margin-top: 98px;
+}
+/*===========QA menu css ends==========*/
+
+/*===========QA css start==========*/
+.menu_wrap .navbar-nav li.nav-item.menu_icons .dropdown button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+.rl_selct_wrap {
+    flex-wrap: wrap;
+    text-align: center;
+}
+.rl_selct_wrap a {
+    flex: 0 0 100%;
+    background: #f35756;
+    margin-bottom: 20px;
+    color: #fff;
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-family: Anton;
+    letter-spacing: 0.7px;
+}
+.rl_selct_wrap a:hover{
+	text-decoration:none;
+}
+.menu_wrap .navbar-nav li.nav-item.menu_icons .dropdown .dropdown-menu a:hover {
+    color: #181818;
+}
+.menu_wrap .navbar-nav li.nav-item.menu_icons .dropdown button:focus {
+    box-shadow: none;
+}
+.menu_wrap .navbar-nav li.nav-item.menu_icons .dropdown .dropdown-menu {
+    right: -10px;
+    left: inherit;
+
+}
+.menu_wrap .navbar-nav li.nav-item.menu_icons .dropdown .dropdown-menu a {
+    margin: 0;
+    padding: 10px 20px;
+    line-height: 1;
+    font-weight: normal;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.menu_wrap .navbar-nav li.nav-item.menu_icons .dropdown .dropdown-menu a:active{
+	color:#181818;
+	background-color: #f8f9fa;
+}
+.menu_wrap .navbar-nav li.nav-item.menu_icons .dropdown button:after {
+    display:none;
+}
+.main_div {
+    position: relative;
+	overflow: hidden;
+}
+.main_div.h-35:before {
+    content: "";
+    top: -54%;
+}
+/* .main_div:before {
+    content: "";
+    width: 121%;
+    height: 100%;
+    position: absolute;
+    background: #f35756;
+    transform: rotate(-13deg);
+    top: -58.5%;
+    left: -13%;
+    z-index: -1;
+} */
+.main_div:before {
+    content: "";
+    width: 121%;
+    height: 712px;
+    position: absolute;
+    background: #f35756;
+    transform: rotate(-13deg);
+    top: -397px;
+    left: -13%;
+    z-index: -1;
+}
+.banner_txt {
+    margin-right: -10px;
+    padding-left: 13px;
+	position:relative;
+	z-index: -1;
+}
+.banr_image {
+    z-index: -1;
+    position: absolute;
+    right: -8px;
+    top: 0;
+}
+.banr_headng {
+    font-family: Anton;
+    font-size: 72px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 4.32px;
+    color: #000000;
+	z-index: 0;
+}
+.quiz_wrap {
+    width: 540px;
+    margin: 0 auto;
+	padding: 0px 0 30px 0;
+}
+.quiz_qa {
+	z-index: 9;
+	margin-top: -23px;
+    width: 100%;
+    min-height: 350px;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px 0 rgba(94, 94, 94, 0.15);
+    border: solid 1px #f2f2f2;
+    background-color: #fafafa;
+	padding: 40px 110px 20px 110px;
+}
+.qa_page {
+    background: #fafafa;
+	position:relative;
+}
+.quiz_qa_head h3 {
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0.36px;
+    color: #181818;
+	text-align: center;
+	margin-bottom: 40px;
+	text-transform: uppercase;
+}
+.quiz_qa_footer {
+    margin-top: 46px;
+    text-align: right;
+}
+.quiz_qa_footer .nxt_btn a span {
+    width: 146.5px;
+    height: 40px;
+    border-radius: 3px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    color: #fafafa;
+    letter-spacing: 0.3px;
+    position: relative;
+    z-index: 9;
+    font-weight: 300;
+}
+.quiz_qa_footer .nxt_btn a:hover{
+	text-decoration:none;
+}
+.quiz_qa_footer .nxt_btn a  {
+    position: relative;
+}
+.quiz_qa_footer .nxt_btn {
+    margin-right: -80px;
+}
+.quiz_qa_footer .nxt_btn a img {
+    margin-left: 7px;
+}
+.quiz_qa_footer .nxt_btn a span:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 6px 10px 0 rgba(94, 94, 94, 0.15);
+    background-color: #f35756;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 3px;
+    transform: skewX(-25deg);
+	-webkit-transform: skewX(-25deg);
+}
+.gndr_slct {
+    width: 140px;
+    height: 140px;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px 0 rgba(94, 94, 94, 0.15);
+    border: solid 1px #e0e0e0;
+    background-color: #fafafa !important;
+}
+/*===========QA css ends==========*/
+
+/**==============radio btn css start===============**/
+.inputGroup {
+  background-color: #fff;
+  display: block;
+  margin: 0px 0;
+  position: relative;
+}
+.inputGroup label {
+  padding: 12px 30px;
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #f35756;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  -webkit-transition: color 200ms ease-in;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
+
+.inputGroup label:after {
+  width: 25px;
+  height: 25px;
+  content: '';
+  border: 2px solid #e0e0e0;
+  background-color: #e0e0e0;
+  background-repeat: no-repeat;
+  background-position: -1px 0px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+.inputGroup input:checked ~ label {
+  color: #181818;
+}
+
+.inputGroup input:checked ~ label:after {
+  background-color: #f35756;
+  border-color: #f35756;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+}
+.inputGroup input {
+  width: 32px;
+  height: 32px;
+  -webkit-box-ordinal-group: 2;
+          order: 1;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
+}
+.gndr_slct input {
+    position: absolute;
+    right: 10px;
+    top: 22px;
+}
+.gndr_slct label {
+    height: 100%;
+}
+.gndr_slct_data{
+	display: flex;
+	display: -webkit-flex;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+	flex-wrap: wrap;
+	padding-top: 0px;
+}
+.gndr_slct_data span {
+    flex: 0 0 100%;
+}
+.gndr_slct.inputGroup label:after {
+    position: absolute;
+    right: 10px;
+    top: 22px;
+}
+span.gs_value {
+    font-family: Rubik;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.28px;
+    text-transform: uppercase;
+}
+.gndr_slct_data span.gs_icon {
+    margin-top: 32px;
+    margin-bottom: 19px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gs_icon .b-img{
+	display:none;
+}
+.inputGroup input:checked ~ label .gs_icon .p-img{
+	display:none;
+}
+.inputGroup input:checked ~ label .gs_icon .b-img{
+	display:block;
+}
+/**==============radio btn css ends===============**/
+
+/**===========footer css start==========**/
+footer {
+    background:#181818;
+    color: #fff;
+}
+.footer_info span.icon {
+    display: flex;
+}
+.footer_info .f-mail span.icon
+{
+	align-items: center;
+}
+.footer_info .f-phone span.icon, .footer_info .f-loc span.icon
+{
+	align-items: flex-start;
+}
+.footer_inner{
+	padding: 40px 160px;
+}
+.copyright_sec {
+    padding: 20px;
+    background: #111;
+	text-align: center;
+}
+.copyright_sec p {
+    margin:0;
+}
+.footer_widget h3 {
+    text-transform: uppercase;
+    font-size: 18px;
+    position: relative;
+	margin-bottom:45px;
+	letter-spacing: 0.5px;
+    font-family: 'Anton', sans-serif;
+    font-weight: normal;
+	color: #fafafa;
+}
+.footer_widget h3:before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background: #f35756;
+    bottom: -6px;
+}
+.footer_info .f-phone {
+    margin-top: 15px;
+}
+.footer_info .txt {
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: #fafafa;
+	line-height: 24px;
+}
+.footer_info .f-loc .txt {
+    margin-top: 0;
+}
+.time_list ul {
+    margin: 0;
+    padding: 0;
+	padding-left: 35px;
+}
+.time_list ul li {
+    list-style: none;
+    padding-left: 0px;
+    position: relative;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.71;
+    letter-spacing: 0.28px;
+	margin-bottom: 3px;
+}
+
+.newsletter {
+    position: relative;
+}
+.nwsltr_icon {
+    position: absolute;
+    left: 0;
+}
+.nwsltr_input input {
+    width: 100%;
+    padding: 6px 10px 6px 40px;
+}
+.nwsltr_icon {
+    position: absolute;
+    left: 8px;
+    background: transparent;
+    color: #000;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    top: 5px;
+    font-size: 15px;
+}
+.footer_widget .pl {
+    padding-left: 35px;
+}
+.nwsltr_input input::placeholder {
+    color: #bdbdbd;
+}
+.nwsltr_input input {
+    width: 100%;
+    padding: 7px 10px 7px 10px;
+    background: transparent;
+    box-shadow: none;
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.28px;
+    color: #bdbdbd;
+    font-weight: 300;
+	max-width: 188px;
+	text-align: center;
+}
+/*===========footer css ends==========*/
+
+
+
+/*===========Media query css start==========*/
+
+@media (min-width: 1200px){
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1190px;
+}
+}
+@media (max-width: 1199px){
+	.sbscrb_btn a{
+		width: 93%;
+	}
+	.footer_inner {
+    padding: 40px 0;
+}
+.meal_wrap:after{
+	width: 490px;
+}
+}
+@media (max-width:991px){
+	.subscription_cntnt {
+    padding: 0px 15px 30px 15px;
+}
+	.footer_widget .pl, .time_list ul {
+    padding-left: 0;
+}
+	.social_icon {
+    margin-left: 0;
+}
+	.menu_wrap {
+    text-align: right;
+	margin-top: 20px;
+}
+.footer_widget {
+    margin-bottom: 30px;
+}
+.banner_sec {
+    margin-top: 55px;
+}
+.menu_wrap button.navbar-toggler, .menu_wrap button.navbar-toggler:focus {
+    padding: 0 !important;
+    border: 0 !important;
+    width: auto;
+    border-radius: 0;
+    box-shadow: none;
+    outline: 0px auto -webkit-focus-ring-color;
+	color: #fff;
+}
+.menu_wrap .navbar-collapse {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: #fff;
+	border-radius: 3px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.menu_wrap .navbar-collapse ul {
+    margin: 0;
+    padding: 10px 20px;
+}
+.menu_wrap .navbar-collapse ul li a.nav-link:first-child {
+    margin-left: 0;
+}
+.step_menu_inner ul li{
+	flex: 0 0 100%;
+    max-width: 100%;
+	height:123px;
+	align-items: center;
+	border-left: 1px solid #6e6e6e;
+}
+.qsm_txt{
+	font-size: 11.2px;
+}
+.step_menu_inner ul{
+	padding-left: 5px;
+}
+.step_menu_inner ul li.bd_top:before {
+    content: "";
+    height: 124px;
+    width: 5px;
+    position: absolute;
+    left: -5px;
+    top: -1px;
+}
+.step_menu_inner ul li.bd_top:last-child::before {
+    width: 5px;
+}
+.step_menu_inner ul li a{
+	width: 100%;
+}
+.meal_wrap:after{
+	transform: rotate(-255deg) scaleX(-1);
+    -webkit-transform: rotate(-255deg) scaleX(-1);
+	background-size: 41%;
+	width: 400px;
+    height: 400px;
+	z-index: -1;
+}
+.meal_wrap_desc{
+	z-index: 9;
+}
+.meal_wrap{
+	z-index: 1;
+}
+}
+
+@media (max-width:767px){
+	.subscription_item{
+		margin-bottom: 30px;
+	}
+	.bodytype .quiz_qa_content .select_item {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.bodytype_image img {
+    max-width: 100%;
+}
+	.quiz_qa.steps_slct, .quiz_qa.steps_slct.overige-producten-step, .quiz_qa.steps_slct.alergen {
+    padding: 22px 60px 10px 60px;
+}
+.quiz_qa.steps_slct.fnsh_page {
+    padding: 51px 10px 41px 10px;
+}
+.quiz_qa.metingen {
+    padding: 34px 60px 10px 60px;
+}
+.quiz_qa.steps_slct.jouw-vleesproducten{
+	padding: 40px 60px 10px 60px;
+}
+.quiz_qa.steps_slct.activity_step {
+    padding: 22px 40px 10px 40px;
+}
+.quiz_qa.jouw_doel {
+    padding: 20px 15px 20px 15px;
+}
+.overige-producten-step .quiz_qa_head {
+    margin: 0;
+}
+.nf_ftr.quiz_qa_footer {
+    margin: 2px -30px 0px -30px;
+}
+.quiz_qa.metingen .quiz_qa_footer.nf_ftr {
+    margin: 13px 0px 0px 0px;
+}
+	.quiz_qa_footer .nxt_btn {
+    margin-right: -50px;
+}
+	.logo_wrap {
+    max-width: 120px;
+	padding: 0;
+}
+.logo_wrap:before {
+    border-width: 25px 120px 0 0;
+    bottom: -25px;
+}
+.phone_info a, .mail_info a{
+	justify-content: flex-end;
+}
+.menu_wrap {
+    text-align: right;
+	margin-top: 12px;
+    max-width: 55%;
+}
+.topbar {
+    flex-wrap: wrap;
+	padding-top: 5px;
+}
+.phone_info, .mail_info {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 0;
+}
+.mail_info {
+    margin: 5px 0;
+}
+.main_div:before{
+	width: 155%;
+	left: -45%;
+}
+.quiz_wrap{
+	width: auto;
+}
+.quiz_qa{
+	padding: 40px 90px 20px 90px;
+}
+.steps_result .banner_txt .banr_headng {
+    font-size: 56px;
+}
+.diet_item {
+    margin-bottom: 30px;
+}
+}
+@media (max-width:640px){
+	.meal_wrap:after{
+		display:none;
+	}
+}
+@media (max-width:575px){
+	.pay_method_txt {
+		font-size: 16px;
+	}
+	.pay_method_icon {
+    font-size: 26px;
+}
+	.steps_result .banner_txt{
+		flex-wrap: wrap;
+		padding: 0;
+	}
+	.diet_paln_items, .email_paln_items{
+		margin-top: 55px;
+	}
+	.steps_result .banner_txt .banr_image{
+		position: initial;
+	}
+	.steps_result .banr_image img {
+    max-width: 270px;
+}
+.steps_result .banner_txt .banr_headng {
+    font-size: 48px;
+}
+	.quiz_qa {
+    padding: 40px 60px 20px 60px;
+}
+.quiz_qa_footer .nxt_btn {
+    margin-right: 0;
+}
+.gndr_slct_wrap {
+    flex-wrap: wrap;
+}
+.jouw_slct_wrap {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.jouw_doel_slct p {
+    justify-content: center;
+	height: auto;
+    margin-top: 15px;
+}
+.jouw_doel_slct h3 {
+    margin-top: 40px;
+    height: auto;
+}
+}
+@media (max-width:480px){
+	.pay_mthd_wrap{
+		padding: 0;
+	}
+	.mail_input_epi .form_group, .mail_input_epi .form_grp_checkbox, .mail_input_epi .form_group_submit{
+		    max-width: 100%;
+	}
+	.quiz_qa.steps_slct.bodytype {
+    margin-bottom: 98px;
+}
+	.quiz_qa.steps_slct.bodytype {
+    padding: 35px 15px 10px 15px;
+}
+	.finish_wrap{
+		width: 230px;
+		height: 330px;
+	}
+	.finish_wrap h3{
+		font-size: 16px;
+	}
+	.quiz_qa.steps_slct.activity_step {
+    padding: 22px 20px 10px 20px;
+}
+.quiz_qa.metingen {
+    padding: 34px 20px 10px 20px;
+}
+.activity_step .quiz_qa_content .select_item label {
+    padding: 10px 20px 10px 40px !important;
+    line-height: 1.5;
+}
+	.quiz_qa.steps_slct.overige-producten-step.jouw-groente .quiz_qa_head h3 {
+    margin-bottom: 35px;
+}
+.quiz_qa.steps_slct.jouw-vleesproducten .quiz_qa_head h3 {
+    margin-bottom: 45px;
+}
+	.quiz_qa.steps_slct, .quiz_qa.steps_slct.overige-producten-step {
+    padding: 22px 35px 10px 35px;
+}
+.quiz_qa.steps_slct.alergen{
+	padding: 22px 20px 10px 20px;
+}
+.alergen .select_item .inputGroup label.small {
+    line-height: 37px;
+    font-size: 12px;
+    padding: 0 11px 0 49px !important;
+    text-align: left;
+}
+.quiz_qa.steps_slct.jouw-vleesproducten{
+	padding: 40px 35px 10px 35px;
+}
+.steps_slct.alergen .quiz_qa_footer {
+    margin-top: 125px;
+    margin: 50px 0px 0px 0px;
+}
+.nf_ftr.quiz_qa_footer {
+    margin: 2px -20px 0px -20px;
+}
+	.select_item {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+	.banr_image{
+		top: -30px;
+	}
+	.gndr_slct_wrap {
+    flex-wrap: wrap;
+}
+.inputGroup.gndr_slct {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+.gndr_slct_data{
+	padding-top: 0px;
+}
+.quiz_qa {
+    padding: 30px 30px 30px 30px;
+	margin-top: -15px;
+}
+.banr_headng{
+	font-size: 46px;
+}
+.quiz_qa_footer {
+    padding-right: 0px;
+}
+}
+
+/*===========Media query css ends==========*/
+
+
+
+
+
+
+
+
+
+

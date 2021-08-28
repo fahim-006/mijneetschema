@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+/*===============global css start===============*/
+
+body{
+	font-family: 'Rubik', sans-serif;
+}
+.sidebar .sidebar-brand.dash_logo {
+    height: auto ;
+}
+.dash_sidebar {
+    background: #181818;
+}
+.dash_sidebar hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+	margin-bottom: 0 !important;
+}
+.dash_sidebar .nav-item a.nav-link {
+    color: #fff;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+	border-top: 1px solid rgba(255,255,255,0.3);
+    padding: 14px 20px;
+}
+.dash_sidebar .nav-item a.nav-link:hover {
+    background: #f8f9fc;
+    color: #f35756 !important;
+}
+.dash_sidebar .nav-item a.nav-link:hover i {
+    color: #f35756 !important;
+}
+.menu__sidebar li.nav-item:last-child a {
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.dash_sidebar .nav-item a.nav-link span {
+    font-size: 16px;
+}
+.dash_sidebar .nav-item .nav-link i {
+    color: rgba(255, 255, 255, 0.8);
+    min-width: 30px;
+    text-align: left;
+    font-size: 16px;
+}
+
+nav.dash_header {
+    background: #f35756;
+}
+.header_srch-btn {
+    background: #eee;
+    border-color: #eee;
+}
+.header_srch-btn i{
+    color:#181818;
+}
+.dash_head-rgt li.nav-item a.nav-link {
+    color: #fff !important;
+}
+.dash_head-rgt li.nav-item a.nav-link span.badge {
+    background-color: #181818;
+}
+.topbar .dropdown-list .dropdown-header {
+    background-color: #181818;
+    border: 1px solid #181818;
+	font-size: 14px;
+    font-weight: 500;
+}
+.slide_dash_btn {
+    margin-top: 25px;
+}
+
+.dashboard-footer {
+    background: #eee;
+    margin-top: 30px;
+}
+.dashboard-footer .copyright span {
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+}
+.page_head_dash{
+	text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 10px !important;
+}
+.dash_intro {
+    width: 60%;
+}
+.dash_intro .page_head_dash {
+    color: black !important;
+    justify-content: center !important;
+}
+.page_head_dash .page_head_icon {
+    background: #f35756;
+    color: #fff;
+    padding: 0;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 22px;
+}
+
+
+/*==========diet plan page css start=========*/
+.calories_wrapper {
+    background: #fff;
+    padding: 40px 30px;
+	box-shadow: 0 6px 10px 0 rgba(94, 94, 94, 0.15);
+    border: solid 1px #f2f2f2;
+	margin-bottom: 40px;
+}
+.diet_meal-head {
+    background: #181818;
+    color: #fff;
+    padding: 10px 20px;
+}
+.diet_meal-head h3 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-family: Anton;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+span.icon_cal {
+    width: 120px;
+    height: 120px;
+    background: #f35756;
+    padding: 20px;
+    border-radius: 50%;
+}
+span.cal_count {
+    margin-left: 30px;
+}
+.cal_count h3 {
+    font-family: Anton;
+    color: #181818;
+    text-transform: uppercase;
+    font-size: 32px;
+	margin-bottom: 0;
+}
+.cal_count p {
+    color: #777;
+    font-size: 18px;
+}
+.diet_meal_wrap {
+    background: #fff;
+    box-shadow: 0 3.3px 8.8px 0 rgba(94, 94, 94, 0.15);
+	margin-bottom: 35px;
+}
+.diet_meal-content ul {
+    margin: 0;
+    padding: 0;
+}
+.diet_meal-content ul li {
+    list-style: none;
+    margin-bottom: 13px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 13px;
+}
+.diet_meal-content {
+    padding: 20px;
+}
+.diet_meal-content ul li i {
+    color: #f35756;
+    margin-right: 15px;
+    font-size: 18px;
+}
+.diet_meal-content ul li .meal_name {
+    font-size: 16px;
+    color: #555;
+}
+.diet_meal-content ul li:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+.diet_meal_wrap.extra_food p {
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 13px;
+    color: #555;
+}
+.extra_food_list li .efl_icon {
+    background: #f35756;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+	margin-right: 10px;
+}
+.extra_food_list li .efl_icon img {
+    max-width: 54%;
+    left: 50%;
+    position: relative;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%) ;
+}
+.extra_food_list li .efl_txt {
+    font-size: 16px;
+}
+.extra_food_list li .meal_serving {
+    background: #eee;
+    padding: 5px 10px;
+    color: #181818;
+    font-size: 15px;
+    font-weight: 500;
+	min-width: 125px;
+    text-align: center;
+}
+.extra_food_list li {
+    border-top: 1px solid #ddd;
+    padding-top: 12px;
+    border-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+.diet_meal-content.extra_food_list {
+    padding-top: 10px;
+}
+.dash__iner {
+    display: flex;
+}
+.dash__iner #content-wrapper {
+    background-color: #f8f9fc;
+    width: 100%;
+    overflow-x: hidden;
+}
+/*==========diet plan page css ends=========*/
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+<%- include('../partials/login-header') %>
+
+<div class="login-form-bg h-100">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-xl-6">
+                <div class="form-input-content">
+                    <div class="card login-form mb-0">
+                        <div class="card-body pt-5">
+                            <a class="text-center" href="/login"> <span><img src="/images/logo.png" alt="" width="100px"></span></a>
+                            <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+                                <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+                            <% } %>
+                            <% if(typeof reset !== 'undefined' && typeof reset.msg !== 'undefined') { %>
+                                <p class = "alert alert-success ml15 mr15 text-center"><%- reset.msg %></p>
+                             <% } %>
+                            <form class="mt-5 mb-5 login-input" action="/loginPost" method="post">
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control"  value="<%=formdata['email'] %>" placeholder="Email">
+                                    <% if(typeof errors !== 'undefined' && typeof errors.email !== 'undefined') { %>
+                                    <p class = "error"><%- errors[ "email" ] %></p>
+                                    <% } %>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" class="form-control"  placeholder="Password" value="<%=formdata['password'] %>">
+                                    <% if(typeof errors !== 'undefined' && typeof errors.password !== 'undefined') { %>
+                                        <p class = "error"><%- errors[ "password" ] %></p>
+                                        <% } %>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="inputCheckbox"> Remember me
+                                    <span class="pull-right"> <a href="#"> Forgot Password?</a></span>    
+                                </div>
+                                <input type="submit" class="btn login-form__btn submit w-100" value="Sign In"/>
+                            </form>
+                            <!-- <p class="mt-5 login-form__footer">Dont have account? <a href="page-register.html" class="text-primary">Sign Up</a> now</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/login-footer') %>

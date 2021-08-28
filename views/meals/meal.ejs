@@ -1,0 +1,249 @@
+<%- include('../partials/header') %>
+<%- include('../partials/sidebar') %>
+
+<div class="content-body">
+
+    <div class="row page-titles mx-0">
+        <div class="col p-md-0">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Add Meal</a></li>
+            </ol>
+        </div>
+    </div>
+    <!-- row -->
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="card"> 
+                    <div class="card-body">
+                        <h4>Add Meal</h4>
+                        
+                        <div class="form-validation">
+                           
+                            <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+                                <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+                             <% } %>  
+                             <% if(typeof success !== 'undefined' && typeof success.msg !== 'undefined') { %>
+                                <p class = "alert alert-danger ml15 mr15 text-center"><%- success.msg %></p>
+                             <% } %> 
+                            
+                            <form class="form-valide" action="/meals/create-meal" method="post" enctype="multipart/form-data">
+                               
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val_category">Category <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control form-select form-select-lg" aria-label=".form-select-lg example" name="category" id="val_category" value="<%=formdata['category'] %>">
+                                         <option value="">Select Category</option>
+                                         <% if(categoryData.length > 0) {%>
+                                            <% categoryData.map((caty,i) => { %>
+                                         <option class="" value="<%=caty._id %>"><%=caty.category %></option>
+                                         <% }) %>
+                                         <% } %>
+                                         </select>   
+                                        <% if(typeof errors !== 'undefined' && typeof errors.category !== 'undefined') { %>
+                                            <p class = "error"><%- errors["category"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val_username">Name <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="val-username" name="name" value="<%=formdata['name'] %>" placeholder="Enter a product name..">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.name !== 'undefined') { %>
+                                            <p class = "error"><%- errors["name"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-email">Sku<span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="val-email" value="<%=formdata['sku'] %>" name="sku" placeholder="Enter a sku.." >
+                                        
+                                        <% if(typeof errors !== 'undefined' && typeof errors.sku !== 'undefined') { %>
+                                            <p class = "error"><%- errors[ "sku" ] %></p>
+                                            <% } %>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-price">Price <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="val-price" value="<%=formdata['price'] %>" name="price" placeholder="Enter price...">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.price !== 'undefined') { %>
+                                            <p class = "error"><%- errors["price"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val_description">Description <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <textarea class="form-control" id="val_description" name="description" placeholder="Description" ></textarea>
+                                        
+                                        <% if(typeof errors !== 'undefined' && typeof errors.description !== 'undefined') { %>
+                                            <p class = "error"><%- errors["description"] %></p>
+                                        <% } %> 
+                                        <span id='message'></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val_nutrition">Food Source<span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <span class="input-group-text addSource"> <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20,2H8C6.897,2,6,2.897,6,4v12c0,1.103,0.897,2,2,2h12c1.103,0,2-0.897,2-2V4C22,2.897,21.103,2,20,2z M8,16V4h12 l0.002,12H8z"></path><path d="M4 8H2v12c0 1.103.897 2 2 2h12v-2H4V8zM15 6L13 6 13 9 10 9 10 11 13 11 13 14 15 14 15 11 18 11 18 9 15 9z"></path></svg> 
+                                        click to add more food source
+                                        </span>
+                                        <div id="source">
+                                            <div class="foodSource">
+                                                <div class="input-group">
+                                                    <select name="val_food" id="food" class="form-control form-select">
+                                                        <option value="">All</option>
+                                                        <% if(foodSource.length > 0) { %>
+                                                            <% foodSource.map((data,i) => { %>
+                                                         <option value="<%=data %>"><%=data %></option>
+                                                         <% }) %>
+                                                         <% } %>
+                                                    </select>   
+
+                                                    <select name="food_source" id="ingredient" class="form-control form-select">
+                                                        <option value="">Select Ingredient</option>
+                                                        <% if(ingredientData.length > 0) {%>
+                                                            <% ingredientData.map((caty,i) => { %>
+                                                         <option class="" value="<%=caty._id %>"><%=caty.name %></option>
+                                                         <% }) %>
+                                                         <% } %>
+                                                    </select>
+                                                    <input type="text" class="form-control" id="val-quantity" value="<%=formdata['quantity'] %>" name="quantity" placeholder="Quantity">
+                                                    <span class="input-group-text removeSource"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"></path></svg></span>
+                                                </div>
+                                                <% if(typeof errors !== 'undefined' && typeof errors.food_source !== 'undefined') { %>
+                                                    <p class = "error"><%- errors["food_source"] %></p>
+                                                <% } %>
+                                                <% if(typeof errors !== 'undefined' && typeof errors.quantity !== 'undefined') { %>
+                                                    <p class = "error"><%- errors["quantity"] %></p>
+                                                <% } %>
+                                            </div>
+                                            
+                                        </div>
+                                        <!-- <textarea class="form-control" id="val_nutrition" name="nutrition" placeholder="Nutrition Facts" ></textarea>
+                                        
+                                        <% if(typeof errors !== 'undefined' && typeof errors.nutrition !== 'undefined') { %>
+                                            <p class = "error"><%- errors["nutrition"] %></p>
+                                        <% } %> 
+                                        <span id='message'></span> -->
+                                    </div>
+                                </div>
+                               
+                               
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" >Image<span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                         <input type="file" name="avtar"  class="form-control-file">
+                                         
+                                    <% if(typeof errors !== 'undefined' && typeof errors.avtar !== 'undefined') { %>
+                                        <p class = "error"><%- errors["avtar"] %></p>
+                                    <% } %> 
+                                  
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" >Ingredients
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <div class="container" ><span class='add'>+Add Ingredient</span>
+                                            <div class='element' id='div_1'>
+                                                <div class="ingr_div1">
+                                                    <div class="ingr_div">
+                                                        <div class="input-group">
+                                                            <select class="form-control" name="ingredient">
+                                                                <option value="">Select Ingredient</option>
+                                                                <% if(ingredientData.length > 0) {%>
+                                                                <% ingredientData.map((data,i) => { %>
+                                                                <option value="<%=data._id %>"><%=data.name %></option>
+                                                                <% }) %>
+                                                                <% } %>
+                                                            </select> 
+                                                            <input type="number" class="form-control"  name="ingredient_price" placeholder="Price.." />
+                                                            <input type="number" class="form-control"  name="ingredient_quantity" placeholder="Quantity.." />
+                                                            <% if(typeof errors !== 'undefined' && typeof errors.ingredient !== 'undefined') { %>
+                                                                <p class = "error"><%- errors["ingredient"] %></p>
+                                                            <% } %>
+                                                            <span class="cross input-group-text"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"></path></svg></span>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           </div>
+                                  
+                                    </div>
+                                </div>
+                               
+                                <div class="form-group row">
+                                    <div class="col-lg-8 ml-auto">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>   
+<%- include('../partials/footer') %>
+
+<script>
+    $(document).ready(function(){
+
+// Add new element
+$(".add").click(function(){
+     var count = <%= ingredientData.length %>;
+	 var total_element = $(".ingr_div").length;
+	 if(total_element < count)
+	 {
+    $( ".ingr_div1 .ingr_div" ).clone().appendTo( "#div_1" );
+	 }
+});
+
+$(document).on('click','.cross',function(){
+    var total_element = $(".ingr_div").length;
+    if(total_element > 1)
+    {
+        $(this).closest('.ingr_div').remove();
+    }
+});
+});
+
+
+$(document).ready(function(){
+
+// Add new element
+$(".addSource").click(function(){
+     var count = <%= ingredientData.length %>;
+	 var total_element = $(".foodSource").length;
+	 if(total_element < count)
+	 {
+    $( ".foodSource" ).clone().appendTo( "#source" );
+	 }
+});
+
+$(document).on('click','.removeSource',function(){
+    var total_element = $(".foodSource").length;
+    if(total_element > 1)
+    {
+        $(this).closest('.foodSource').remove();
+    }
+});
+});
+
+</script>

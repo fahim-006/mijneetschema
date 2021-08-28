@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      </style>
+  </head>
+  <body>
+    <h1>Thanks For Shopping With Us!</h1>
+    <br />
+    <div>
+      <p>
+        <strong>Name</strong> : #name#<br />
+        <strong>Adress</strong> : #address# <br />
+        <strong>email</strong> : #email#
+      </p>
+    </div>
+    <h3>Order Id: #orderId#</h3>
+    <table
+      style="width:100%; border: solid 1px lightgray; border-collapse: collapse;text-align: center;"
+    >
+      <tr style="border: 1px solid lightgray;">
+        <th >S.No.</th>
+        <th>Product Name</th>
+        <th>Price</th>
+      </tr>
+
+      #tableBody#
+      <tr style="border: 1px solid lightgray;">
+        <td></td>
+        <td>Total</td>
+        <td>#total#</td>
+      </tr>
+      <tr style="border: 1px solid lightgray;">
+        <td></td>
+        <td>Tax</td>
+        <td>#tax#</td>
+      </tr>
+      <tr style="border: 1px solid lightgray;">
+        <td></td>
+        <td>Discount %</td>
+        <td>#discount#</td>
+      </tr>
+      <tr style="border: 1px solid lightgray;">
+        <td></td>
+        <td>Grand Total</td>
+        <td>#gtotal#</td>
+      </tr>
+    </table>
+    <br/>
+
+    Regards: MIJN EETSCHEMA
+  </body>
+</html>

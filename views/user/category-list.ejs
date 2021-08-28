@@ -1,0 +1,73 @@
+<%- include('../partials/header') %>
+<%- include('../partials/sidebar') %>
+<div class="content-body">
+
+    <div class="row page-titles mx-0">
+        <div class="col p-md-0">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Category</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Listing</a></li>
+            </ol>
+        </div>
+    </div>
+    <!-- row -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Category Listing</h4>
+                        <div class="card-title"> 
+                            <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+                                <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+                             <% } %>  
+                             <% if(typeof added !== 'undefined') { %>
+                                 <p class = "alert alert-success ml15 mr15 text-center"><%- added %></p>
+                              <% } %>  
+                             <% if(typeof message !== 'undefined' && typeof message.msg !== 'undefined') { %>
+                                 <p class = "alert alert-success ml15 mr15 text-center"><%- message.msg %></p>
+                              <% } %>     
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered zero-configuration">
+                                <thead>
+                                    <tr>
+                                        <th>Sr no.</th>
+                                        <th>Category Name</th>
+                                        <th> Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if(data.length > 0) {%>
+                                        <% data.map((caty,i) => { %>
+                                    <tr>
+                                    <td><%= i+1 %></td>
+                                    <td><%= caty.category %></td>
+                                    <td><span>
+                                    <a href="<%= baseUrl %>user/category/edit/<%= caty._id %>" data-toggle="tooltip" data-placement="top" title="Edit">
+                                        <i class="fa fa-pencil color-muted m-r-5"></i></a></span>
+                                    
+                                        <span>
+                                            <a href="<%= baseUrl %>users/category/delete/<%= caty._id %>" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                <i class="fa fa-trash color-muted m-l-5"></i>
+                                            </a>
+                                        </span>
+                                    
+                                    </td> 
+
+                                    </tr>
+                                    <% }) %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /# column -->          
+        </div>
+ 
+    <!-- #/ container -->
+</div>
+<%- include('../partials/footer') %>

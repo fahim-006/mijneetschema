@@ -1,0 +1,83 @@
+<%- include('../partials/header') %>
+<%- include('../partials/sidebar') %>
+
+<div class="content-body">
+
+    <div class="row page-titles mx-0">
+        <div class="col p-md-0">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Add Plan</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- row -->
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="card"> 
+                    <div class="card-body">
+                        <h4>Add Plan</h4>
+                        
+                        <div class="form-validation">
+                           
+                            <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+                                <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+                             <% } %>  
+                             <% if(typeof success !== 'undefined' && typeof success.msg !== 'undefined') { %>
+                                <p class = "alert alert-danger ml15 mr15 text-center"><%- success.msg %></p>
+                             <% } %> 
+                            
+                            <form class="form-valide" action="/plans/create-plan" method="post" enctype="multipart/form-data">
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val_username"> Plan Name <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="val-username" name="name" value="<%=formdata['name'] %>" placeholder="Enter plan name...">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.name !== 'undefined') { %>
+                                            
+                                            <p class = "error"><%- errors["name"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+                               
+                               
+                              
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val_description"> Description <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="val-description" name="description" value="<%=formdata['description'] %>" placeholder="Enter a description/bio..">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.bio !== 'undefined') { %>
+                                            <p class = "error"><%- errors["bio"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val_price"> Price <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="val_price" name="price" value="<%=formdata['price'] %>" placeholder="Enter price">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.bio !== 'undefined') { %>
+                                            <p class = "error"><%- errors["bio"] %></p>
+                                        <% } %>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-8 ml-auto">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>   
+<%- include('../partials/footer') %>

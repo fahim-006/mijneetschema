@@ -1,0 +1,152 @@
+<%- include('../partials/header') %>
+<%- include('../partials/sidebar') %>
+
+<div class="content-body">
+
+    <div class="row page-titles mx-0">
+        <div class="col p-md-0">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Edit Trainer</a></li>
+            </ol>
+        </div>
+    </div>
+    <!-- row -->
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="card"> 
+                    <div class="card-body">
+                        <h4>Edit Trainer</h4>
+                        
+                        <div class="form-validation">
+                           
+                            <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+                                <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+                             <% } %>  
+                             <% if(typeof success !== 'undefined' && typeof success.msg !== 'undefined') { %>
+                                <p class = "alert alert-danger ml15 mr15 text-center"><%- success.msg %></p>
+                             <% } %> 
+                            
+                            <form class="form-valide" action="/trainer/edit-trainer/<%= id %>" method="post" enctype="multipart/form-data">
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val_username">Full Name <span class="text-danger"></span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="val-username" name="name" value="<%= name %>" placeholder="Enter a username..">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.name !== 'undefined') { %>
+                                            <p class = "error"><%- errors["name"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger"></span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="email" class="form-control" id="val-email" value="<%= email %>" name="email" placeholder="Your valid email.." >
+                                        
+                                        <% if(typeof errors !== 'undefined' && typeof errors.email !== 'undefined') { %>
+                                            <p class = "error"><%- errors[ "email" ] %></p>
+                                            <% } %>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-phoneus">Mobile Number <span class="text-danger"></span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="val-phoneus" value="<%= mobile_number %>" name="mobile_number" placeholder="917878768">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.phone !== 'undefined') { %>
+                                            <p class = "error"><%- errors["mobile_number"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-phoneus">Password <span class="text-danger"></span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="password" class="form-control" id="val_phoneus" name="new_password" placeholder="New password">
+                                        
+                                        <% if(typeof errors !== 'undefined' && typeof errors.new_password !== 'undefined') { %>
+                                            <p class = "error"><%- errors["new_password"] %></p>
+                                        <% } %> 
+                                        <span id='message'></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-phoneus">Confirm Password <span class="text-danger"></span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="password" class="form-control" id="val_phoneus1" name="confirm_password"  placeholder="confirm password">
+                                       
+                                        <% if(typeof errors !== 'undefined' && typeof errors.confirm_password !== 'undefined') { %>
+                                            <p class = "error"><%- errors["confirm_password"] %></p>
+                                        <% } %> 
+                                        <span id='message'></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" >Image<span class="text-danger"></span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                         <input type="file" name="avtar"  class="form-control-file">
+                                         <img src="<%= img %>"  height="42" width="42"/>
+                                         
+                                    <% if(typeof errors !== 'undefined' && typeof errors.avtar !== 'undefined') { %>
+                                        <p class = "error"><%- errors["avtar"] %></p>
+                                    <% } %> 
+                                  
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val_username">Category <span class="text-danger"></span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <select name="category" id="val_category" value="<%= category %>">
+                                         <option value="">Select Category</option>
+                                         <% if(categoryData.length > 0) {%>
+                                            <% categoryData.map((caty,i) => { %>
+                                                <% var selected = ( caty._id == category ) ? "" : "selected" %>;
+                                         <option 
+                                            value="<%=caty._id %>" 
+                                            <%= JSON.stringify(caty._id) == JSON.stringify(category)?selected:''   %>
+                                            data-id="<%=category %>">
+                                                <%=caty.category %>
+                                        </option>
+                                         <% }) %>
+                                         <% } %>
+                                         </select>   
+                                        <% if(typeof errors !== 'undefined' && typeof errors.category !== 'undefined') { %>
+                                            <p class = "error"><%- errors["category"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+                               
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val_username">Description/Bio <span class="text-danger"></span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="val-bio" name="bio" value="<%=bio %>" placeholder="Enter a description/bio..">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.bio !== 'undefined') { %>
+                                            <p class = "error"><%- errors["bio"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-lg-8 ml-auto">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>   
+<%- include('../partials/footer') %>

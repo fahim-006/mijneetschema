@@ -1,0 +1,149 @@
+<%- include('../partials/header') %>
+<%- include('../partials/sidebar') %>
+
+<div class="content-body">
+
+    <div class="row page-titles mx-0">
+        <div class="col p-md-0">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Ingredient</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Add</a></li>
+            </ol>
+        </div>
+    </div>
+    <!-- row -->
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="card"> 
+                    <div class="card-body">
+                        <h4>Add Ingredients</h4>
+                        <div class="form-validation">
+                            <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+                                <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+                             <% } %>  
+                             <% if(typeof success !== 'undefined' && typeof success.msg !== 'undefined') { %>
+                                <p class = "alert alert-danger ml15 mr15 text-center"><%- success.msg %></p>
+                             <% } %>    
+                            <form class="form-valide" action="/meals/ingredient/create" method="post">
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-nutrisource"> Nutrition Source <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" name="source" value="<%=formdata['source'] %>" aria-label=".form-select-lg">
+                                            <option selected>Select Source</option>
+                                            <option value="Protein">Protien Source</option>
+                                            <option value="Fat">Fat Source</option>
+                                            <option value="Carbs">Carbs Source</option>
+                                        </select>
+                                        <% if(typeof errors !== 'undefined' && typeof errors.source !== 'undefined') { %>
+                                            <p class = "error"><%- errors["source"] %></p>
+                                        <% } %>
+                                    </div>
+                                </div>
+                                <script>
+
+                                </script>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-username">Ingredient Name <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="val-username" name="name" value="<%=formdata['name'] %>" placeholder="Enter a ingredient name..">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.name !== 'undefined') { %>
+                                            <p class = "error"><%- errors["name"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-protien"> Protien <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="number" class="form-control" id="val-protien" name="protien" value="<%=formdata['protien'] %>" placeholder="Enter Protien value..">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.protien !== 'undefined') { %>
+                                            <p class = "error"><%- errors["protien"] %></p>
+                                        <% } %>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-username">Carbs <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="number" class="form-control" id="val-username" name="carbs" value="<%=formdata['carbs'] %>" placeholder="Enter carbs value..">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.carbs !== 'undefined') { %>
+                                            <p class = "error"><%- errors["carbs"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-username">Fat <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="number" class="form-control" id="val-username" name="fat" value="<%=formdata['fat'] %>" placeholder="Enter Fat value..">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.fat !== 'undefined') { %>
+                                            <p class = "error"><%- errors["fat"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-username">Fiber
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="number" class="form-control" id="val-fiber" name="fiber" value="<%=formdata['fiber'] %>" placeholder="Enter Fiber Value..">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.fiber !== 'undefined') { %>
+                                            <p class = "error"><%- errors["fiber"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-unit">Unit <span class="text-danger">*</span></label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="val-unit" name="unit" value="<%=formdata['unit'] %>" placeholder="Enter Unit of..">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.unit !== 'undefined') { %>
+                                            <p class = "error"><%- errors["unit"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-quantity">Quantity<span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="number" class="form-control" id="val-quantity" name="quantity" value="<%=formdata['quantity'] %>" placeholder="Enter Quantity of..">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.quantity !== 'undefined') { %>
+                                            <p class = "error"><%- errors["quantity"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-calories">Calories<span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="number" class="form-control" id="val-calories" name="calories" value="<%=formdata['calories'] %>" placeholder="Enter calories of..">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.calories !== 'undefined') { %>
+                                            <p class = "error"><%- errors["calories"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+
+                            
+                             
+                                <div class="form-group row">
+                                    <div class="col-lg-8 ml-auto">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>   
+<%- include('../partials/footer') %>

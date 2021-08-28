@@ -1,0 +1,77 @@
+<%- include('../partials/header') %>
+<%- include('../partials/sidebar') %>
+
+<div class="content-body">
+
+    <div class="row page-titles mx-0">
+        <div class="col p-md-0">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Category</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Add</a></li>
+            </ol>
+        </div>
+    </div>
+    <!-- row -->
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="card"> 
+                    <div class="card-body">
+                        <h4>Add Category</h4>
+                        <div class="form-validation">
+                            <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+                                <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+                             <% } %>  
+                             <% if(typeof success !== 'undefined' && typeof success.msg !== 'undefined') { %>
+                                <p class = "alert alert-danger ml15 mr15 text-center"><%- success.msg %></p>
+                             <% } %>    
+                            <form class="form-valide" action="/user/category/create" method="post" enctype="multipart/form-data">
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-username">Category <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="val-username" name="category" value="<%=formdata['category'] %>" placeholder="Enter a category..">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.category !== 'undefined') { %>
+                                            <p class = "error"><%- errors["category"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-username">Description <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="val-username" name="description" value="<%=formdata['description'] %>" placeholder="Enter a description..">
+                                        <% if(typeof errors !== 'undefined' && typeof errors.description !== 'undefined') { %>
+                                            <p class = "error"><%- errors["description"] %></p>
+                                        <% } %> 
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" >Image<span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                         <input type="file" name="avtar"  class="form-control-file">
+                                         
+                                    <% if(typeof errors !== 'undefined' && typeof errors.avtar !== 'undefined') { %>
+                                        <p class = "error"><%- errors["avtar"] %></p>
+                                    <% } %> 
+                                  
+                                    </div>
+                                </div>
+                             
+                                <div class="form-group row">
+                                    <div class="col-lg-8 ml-auto">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>   
+<%- include('../partials/footer') %>

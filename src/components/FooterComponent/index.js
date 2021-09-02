@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import CreateNewsletter from "../Newsletter/createNewsletter";
 
 class FooterComponent extends Component {
 	constructor(props) {
@@ -60,7 +61,10 @@ class FooterComponent extends Component {
 										<h3>Sport en voeding Tips:</h3>
 										<div className="newsletter">
 											<span className="nwsltr_icon"><img src="/images/newsltr-icon.png" className="img-fluid" alt="" /></span>
-											<span className="nwsltr_input"><input type="text" placeholder="enter email" /></span>
+											{/*<span className="nwsltr_input"><input name="email" value="email" type="text" placeholder="enter email" /> </span>*/}
+											<CreateNewsletter/>
+											{/*<a href="mailto:khanmashrur03@gmail.com?subject=something"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>*/}
+											
 										</div>
 									</div>
 								</div>

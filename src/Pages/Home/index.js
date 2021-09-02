@@ -41,7 +41,6 @@ class Home extends Component {
       const { limit , product_limit} = this.state;
       const requestbody = { limit };
       this.props.listCategoryByLimit(requestbody);
-
       const productRequestbody = { limit:product_limit };
       this.props.listAllProductsByLimit(productRequestbody);
     }

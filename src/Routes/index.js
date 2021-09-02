@@ -8,7 +8,7 @@ import { withRouter } from 'react-router';
 import FinishSteps from '../components/FinishSteps';
 import TrainerPages from '../Pages/TrainerPages';
 import UserPages from '../Pages/UserPages';
-
+import EditProfile from '../Pages/Trainer/Dashboard/EditProfile'
 
 import ProductsPage from '../Pages/Products';
 import MealsPage from '../Pages/Meals';
@@ -41,13 +41,14 @@ import UserChat from '../Pages/User/chat';
 import OrdersPage from '../Pages/User/OrdersPage';
 import DietPlan from '../Pages/User/DietPlan';
 import CalculationResult from '../components/CalculationResult';
-
+import CreateNewsletter from '../components/Newsletter/createNewsletter';
 
 const Routes = (props) => (
 	<div>
 		<Switch>
 		    <Route exact path="/" component={Home} />
 			<Route exact path="/calculator" component={HomePage} />
+			<Route exact path="/newsletter" component={CreateNewsletter} />
 			<Route path="/user-login" component={UserPages} />
 			<Route path="/trainer-login" component={TrainerPages} />
 			<Route path="/trainer-subscription" component={SubscriptionPage} />
@@ -68,7 +69,9 @@ const Routes = (props) => (
 {/* -----meals----- */}
 			<Route path="/trainers-list" component={TrainersList}/>
 			<Route path="/trainer-profile/:id" component={TrainerDetail}/>
-			<PrivateTrainerRoute path="/trainer-dashboard" component={TrainerDashboard} />
+			<Route path="/trainer-dashboard" component={TrainerDashboard} />
+
+			<Route path="/edit-profile-trainer" component={EditProfile} />
 			<PrivateTrainerRoute path="/trainer/add-category" component={AddProductCategory} />
 			<PrivateTrainerRoute path="/trainer/list-category" component={ListProductCategory} />
 			<PrivateTrainerRoute path="/trainer/add-products" component={AddProducts} />

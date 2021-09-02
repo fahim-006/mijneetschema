@@ -5,6 +5,7 @@ import { Actions } from '../../../Redux/Actions';
 import Loader from '../../../components/Loader/loader';
 import { createNotification } from '../../../helpers';
 import { socket } from '../../../socket';
+import {authenticate} from '../../../utils/auth'
 
 class LoginPage extends Component {
     constructor(props) {
@@ -83,6 +84,12 @@ class LoginPage extends Component {
             this.props.trianerLogin(requestbody);
             this.setState({loading:true});
             // this.props.startLoading();
+           // alert(requestbody.email)
+            authenticate(requestbody.email, ()=>{
+                this.setState({
+                    email: ''
+                })
+            })
         }
     }
 
@@ -105,6 +112,7 @@ class LoginPage extends Component {
                                 onChange={this.handleChange}
                                 placeholder="Email"
                             />
+                            
                             <span className="email_">
                                 <i className="fa fa-envelope" aria-hidden="true"></i>
                             </span>

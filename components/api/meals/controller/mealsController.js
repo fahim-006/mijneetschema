@@ -259,7 +259,8 @@ module.exports.listAllProducts = async (req, res) => {
 
   if (mealExist) {
     var mealCount = await Meals.find({isDeleted:false}).count();
-    console.log(mealExist);
+    console.log("here it is: "+mealExist);
+
     return res.json({
       status: 200,
       data: mealExist,
@@ -681,7 +682,7 @@ module.exports.listWishProducts = async (req, res) => {
 };
 
 module.exports.checkCoupon = async (req, res) => {
-  console.log(req.body);
+  console.log("req body"+req.body);
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     let errorsData = { coupon: "" };

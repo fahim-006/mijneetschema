@@ -1,6 +1,5 @@
 require('dotenv').config();
 
-
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -18,7 +17,6 @@ const jwt = require('jsonwebtoken');
 const { getUserDataByToken } = require("./helpers/helper");
 const User = require('./models/User')
 const NotificationService = require("./components/api/notification/services/index");
-
 
 
 // var http = require('http').createServer(app);
@@ -46,6 +44,21 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
+//start newsletter
+const newsletterRouter = require('./routes/newsletterRouter')
+app.use('/api/newsletter', newsletterRouter)
+//end of newsletter
+
+//start filtering trainer
+const filterTrainers = require('./routes/filterTrainerRoute');
+app.use('/api/users/fetch-trainer/',filterTrainers)
+//end filtering trainer
+
+//start editTrainerInformation
+const editTrainerInformation = require('./routes/editTrainerRoute')
+app.use('/api/edit-trainer', editTrainerInformation)
+//end of editTrainerInformation
+
 app.use(express.urlencoded({ extended: false }));
 //app.use(up.array());
 app.use(cookieParser());
@@ -86,6 +99,8 @@ app.get('/*', (req, res) => {
 // app.use(function(req, res, next) {
 //   next(createError(404));
 // });
+
+
 
 let server = app.listen(4333, () => console.log('App successfully started on port 4333'));
 var io = require('socket.io')(server);

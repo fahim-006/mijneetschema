@@ -1,7 +1,15 @@
 <%- include('../partials/header') %>
 <%- include('../partials/sidebar') %>
-<div class="content-body">
 
+
+<div class="content-body">
+    <script>
+        import axios from 'axios';
+        axios.get(`http://localhost:4333/api/newsletter`, headers)
+      .then(res => res.data)
+      .catch(err => err);
+
+    </script>
     <div class="row page-titles mx-0">
         <div class="col p-md-0">
             <ol class="breadcrumb">
@@ -18,7 +26,9 @@
                     <div class="card-body">
                         <h4>Dashboard</h4>
                         <h2>Coming Soon</h2>
-                       
+
+                        <br/>
+                        
                     </div>
                 </div>
             </div>

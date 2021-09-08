@@ -18,6 +18,9 @@ var userSchema = new Schema(
     payment_amount: String,
     plan_name: String,
     address: String,
+    gender: String,
+    doel: {type: Array},
+    leeftijd: String,
     latitude: Number,
     longitude: Number,
     job_role: String,
@@ -29,7 +32,13 @@ var userSchema = new Schema(
     created_at: Date,
     updated_at: Date,
     isDeleted: { type: Boolean, default: false },
-    socketId: String
+    socketId: String,
+    description: String,
+    facebookURL: String,
+    twitterURL: String, 
+    linkedinURL: String,
+    expertise: {type: Array},
+    certificates: {type: Array}
   },
   { collection: "users" }
 );

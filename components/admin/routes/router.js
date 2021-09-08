@@ -11,6 +11,7 @@ var multer = require("multer");
 var path = require("path");
 const DIR = "./public/uploads";
 
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, DIR);
@@ -43,6 +44,7 @@ module.exports = (router) => {
 
   router.get("/logout", auth.afterLogin, loginController.logout);
   router.get("/dashboard", auth.afterLogin, dashboardController.dashboard);
+ 
   //edit profile of admin(user)
   router.get("/user/edit-admin", auth.afterLogin, userController.editUser);
   router.post(

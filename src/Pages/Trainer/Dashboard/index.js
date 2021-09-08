@@ -4,6 +4,7 @@ import DashboardLayout from '../../../layouts/DashboardLayout'
 import {userInfo} from '../../../utils/auth'
 import axios from "axios";
 import EditProfile from './EditProfile'
+const API = process.env.REACT_APP_API_URL;
 
 class TrainerDashboardComponent extends Component {
 constructor(props){
@@ -17,7 +18,7 @@ constructor(props){
   gender: ''
  }
 
- axios.get('http://localhost:4333/api/users/fetch-trainer')
+  axios.get(`${API}/users/fetch-trainer`)
   .then(response => {
     response.data.data.trainer_list.forEach((item, index)=>{
       if(item.email == this.state.email){

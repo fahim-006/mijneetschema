@@ -5,9 +5,42 @@ import { bindActionCreators } from 'redux';
 import { Actions } from '../../../Redux/Actions';
 import { sendChatReq } from '../../../socket';
 import { createNotification } from '../../../helpers';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+const API = process.env.REACT_APP_API_URL
+
 class TrainerBio extends Component{
     constructor(props){
         super(props);
+        this.state={
+            rating: null,
+            reviews: '',
+            trainer_id: '',
+            loading: true,
+           
+            facebookURL: '',
+            twitterURL: '',
+            linkedinURL: '',
+           
+        };
+
+        axios.get(`${API}/users/fetch-trainer`)
+        .then(response => {
+            response.data.data.trainer_list.forEach((item, index)=> {
+               
+                if(item._id == this.props.match.params.id){
+                       this.setState({
+                           
+                            facebookURL: item.facebookURL,
+                            linkedinURL: item.linkedinURL,
+                            twitterURL: item.twitterURL,
+                           
+                       });
+                    
+                }
+               
+            })
+        })
     }
 
     componentDidMount(){
@@ -31,6 +64,7 @@ class TrainerBio extends Component{
 
     render(){
         const {profileData} = this.props;
+
         return(
             <div>
                 <section className="diet_paln_items our-prod-main product-detail-main">
@@ -116,17 +150,17 @@ class TrainerBio extends Component{
 											<div className="trainer_social_links">
 												<ul>
 													<li>
-                                                        <a href="#">
+                                                        <a href={`${this.state.facebookURL}`} target="_blank">
                                                             <i className="fa fa-facebook" aria-hidden="true"></i>
                                                         </a>
                                                     </li>
 													<li>
-                                                        <a href="#">
+                                                        <a href={`${this.state.twitterURL}`} target="_blank">
                                                             <i className="fa fa-twitter" aria-hidden="true"></i>
                                                         </a>
                                                     </li>
 													<li>
-                                                        <a href="#">
+                                                        <a href={`${this.state.linkedinURL}`} target="_blank">
                                                             <i className="fa fa-linkedin" aria-hidden="true"></i>
                                                         </a>
                                                     </li>

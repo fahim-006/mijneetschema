@@ -6,6 +6,8 @@ import { bindActionCreators } from 'redux';
 import { Actions } from '../../../Redux/Actions';
 import Moment from 'react-moment';
 import ReactStars from "react-rating-stars-component";
+import axios from 'axios';
+const API = process.env.REACT_APP_API_URL
 
 class TrainerInfo extends Component{
     constructor(props){
@@ -15,7 +17,32 @@ class TrainerInfo extends Component{
             reviews: '',
             trainer_id: '',
             loading: true,
+            description: '',
+            facebookURL: '',
+            twitterURL: '',
+            linkedinURL: '',
+            expertise: '',
+            certificates: ''
         };
+
+        axios.get(`${API}/users/fetch-trainer`)
+        .then(response => {
+            response.data.data.trainer_list.forEach((item, index)=> {
+               
+                if(item._id == this.props.match.params.id){
+                       this.setState({
+                            description: item.description,
+                            facebookURL: item.facebookURL,
+                            linkedinURL: item.linkedinURL,
+                            twitterURL: item.twitterURL,
+                            expertise: item.expertise,
+                            certificates: item.certificates
+                       });
+                    
+                }
+               
+            })
+        })
     }
 
     componentDidMount(){
@@ -27,6 +54,7 @@ class TrainerInfo extends Component{
                 this.props.listRating({product_id: this.state.trainer_id});
             });
         }
+
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -121,26 +149,24 @@ class TrainerInfo extends Component{
                                                     <div className="block">
                                                         <div className="block-inner">
                                                             <h4>Description</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing ellt, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing ellt, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing ellt, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing ellt, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing ellt, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing ellt, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing ellt, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing ellt, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing ellt, sed do eiusmod tempor incididunt. incididunt.</p>
+                                                            <p>{this.state.description}</p>
                                                         </div>
                                                         <div className="block-inner">
-                                                            <h4>Unordered list</h4>
+                                                            <h4>Expertise</h4>
                                                             <ul>
-                                                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                                                <li>Maecenas ullamcorper est et massa mattis condimentum.</li>
-                                                                <li>Vestibulum sed massa vel ipsum imperdiet malesuada id tempus nisl.</li>
-                                                                <li>Etiam nec massa et lectus faucibus ornare congue in nunc.</li>
-                                                                <li>Mauris eget diam magna, in blandit turpis.</li>
+                                                            {this.state.expertise.toString().split(",").map(item => 
+                                                                    <li>{item}</li>
+                                                                )}
                                                             </ul>
+                                                            
                                                         </div>
                                                         <div className="block-inner">
-                                                            <h4>ordered list</h4>
+                                                            <h4>certificates</h4>
+                                                            
                                                             <ol>
-                                                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                                                <li>Maecenas ullamcorper est et massa mattis condimentum.</li>
-                                                                <li>Vestibulum sed massa vel ipsum imperdiet malesuada id tempus nisl.</li>
-                                                                <li>Etiam nec massa et lectus faucibus ornare congue in nunc.</li>
-                                                                <li>Mauris eget diam magna, in blandit turpis.</li>
+                                                            {this.state.certificates.toString().split(",").map(item => 
+                                                                    <li>{item}</li>
+                                                                )}
                                                             </ol>
                                                         </div>
                                                     </div>

@@ -1,6 +1,7 @@
 import axios from 'axios';
 const URL = process.env.REACT_APP_API_URL;
 const users = JSON.parse(localStorage.getItem("user_details"))
+
 const headers = {
   "Content-Type": "application/json",
 };

@@ -5,12 +5,9 @@ const LocationFiltering = () =>{
         <div className="trainer_select_wrap">
             <div className="form_group_row">
                 <div className="form_group">
-                    <div className="trainer__slctr">
-                        <select name="category">
-                            <option value=''>plaats</option>
-                                
-                        </select>
-                    </div>
+                   
+                        <input type="text" placeholder="plaates"  name="address"/>
+                    
                 </div>
             </div>
         </div>

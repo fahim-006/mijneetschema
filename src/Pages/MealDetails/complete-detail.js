@@ -9,17 +9,21 @@ import RatingStars from '../../components/RatingStars';
 
 class CompleteDetail extends Component {
   constructor(props) {
+   
     super(props);
     this.state = {
       rating: null,
       reviews: "",
     };
+    //alert("details props are" + this.props.ingredient[0].protien);
+    //this.onSelect = this.onSelect.bind(this);
   }
 
   componentDidMount() {
+    //console.log("details props are" + this.props);
     this.props.listRating({ product_id: this.props._id });
     window.scrollTo(0, 0);
-  }
+    }
 
   ratingChanged = (newRating) => {
     this.setState({
@@ -27,8 +31,10 @@ class CompleteDetail extends Component {
     });
   };
 
+
   componentDidUpdate(prevProps, prevState) {
     let prps = this.props;
+    //console.log("this is props: "+ prps.prevProps);
     if (
       prps.add_rating_success &&
       prevProps.add_rating_success !== prps.add_rating_success
@@ -39,11 +45,14 @@ class CompleteDetail extends Component {
         reviews: "",
       });
     }
-
+  
     if (prps.add_rating_error) {
       createNotification("err", "Sorry something went wrong, please retry.");
     }
+    //alert(prevState.Calculator)
   }
+
+
 
   handleReviewComment = (event) => {
     this.setState({
@@ -75,9 +84,12 @@ class CompleteDetail extends Component {
     });
   };
 
+
+  
   render() {
     const { rating, reviews } = this.state;
     const { ratingList } = this.props;
+   
     return (
       <div>
         <section className="diet_paln_items our-prod-main all-products-sec complete-prod-dtl">
@@ -133,9 +145,35 @@ class CompleteDetail extends Component {
                           <div className="block">
                             <div className="block-inner">
                               <h4>Nutrition Feiten:</h4>
-                              <p>
-                                {this.props.nutrition && this.props.nutrition}
-                              </p>
+
+                             
+                              <table style={{border: "2px solid black",  width: "100%", textAlign: "center"}}>
+                                <thead style={{border: "1px solid black"}}>
+                                  <th  style={{border: "1px solid black"}}>Ingredient</th>
+                                  <th  style={{border: "1px solid black"}}>Protien</th>
+                                  <th  style={{border: "1px solid black"}}>Carbs</th>
+                                  <th  style={{border: "1px solid black"}}>Fat</th>
+                                  <th  style={{border: "1px solid black"}}>Fiber</th>
+                                  <th  style={{border: "1px solid black"}}>Quantity</th>
+                                  <th  style={{border: "1px solid black"}}>Calories</th>
+                                  <th  style={{border: "1px solid black"}}>Unit</th>
+                                </thead>
+                               
+                                {this.props.ingredient.map((item) => (
+                                  <tr>
+                                    <td style={{border: "1px solid black"}}>{item.name}</td>
+                                    <td style={{border: "1px solid black"}}>{item.protien}</td>
+                                    <td style={{border: "1px solid black"}}>{item.carbs}</td>
+                                    <td style={{border: "1px solid black"}}>{item.fat}</td>
+                                    <td style={{border: "1px solid black"}}>{item.fiber}</td>
+                                    <td style={{border: "1px solid black"}}>{item.quantity}</td>
+                                    <td style={{border: "1px solid black"}}>{item.calories}</td>
+                                    <td style={{border: "1px solid black"}}>{item.unit}</td>
+                                  </tr>
+                                ))}
+                              
+                              </table>
+                             
                             </div>
                           </div>
                         </div>

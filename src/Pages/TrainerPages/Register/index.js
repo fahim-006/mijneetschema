@@ -9,6 +9,7 @@ import { Actions } from '../../../Redux/Actions';
 import Loader from '../../../components/Loader/loader';
 import LocationSearchInput from '../Address';
 import { createNotification } from '../../../helpers';
+import {authenticate} from '../../../utils/auth'
 
 class RegisterPage extends Component {
     constructor(props) {
@@ -132,6 +133,7 @@ class RegisterPage extends Component {
 
 
     handleSubmit = () => {
+
         if (this.isValid()) {
             const {
                 role, email, name, mobile_number, job_role,
@@ -144,6 +146,12 @@ class RegisterPage extends Component {
             this.props.trainerRegister(requestbody);
             this.handleLoading();
             // this.props.startLoading();
+
+            authenticate(requestbody.email, ()=>{
+                this.setState({
+                    email: ''
+                })
+            })
         }
     }
 

@@ -42,10 +42,12 @@ import OrdersPage from '../Pages/User/OrdersPage';
 import DietPlan from '../Pages/User/DietPlan';
 import CalculationResult from '../components/CalculationResult';
 import CreateNewsletter from '../components/Newsletter/createNewsletter';
+import GetNewsLetter from '../components/Newsletter/GetNewsletter';
 
 const Routes = (props) => (
 	<div>
 		<Switch>
+			<Route path="/newsletter123" component={GetNewsLetter}/>
 		    <Route exact path="/" component={Home} />
 			<Route exact path="/calculator" component={HomePage} />
 			<Route exact path="/newsletter" component={CreateNewsletter} />

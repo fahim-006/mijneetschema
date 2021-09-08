@@ -9,6 +9,8 @@ import Pagination from "react-js-pagination";
 import AgeFiltering from './ageFiltering';
 import LocationFiltering from './LocationFiltering';
 import { createNotification } from '../../../helpers';
+import DoelFilter from './doelFilter'
+import GenderFilter from './genderFilter';
 
 class TrainersList extends Component{
     constructor(props){
@@ -57,11 +59,16 @@ class TrainersList extends Component{
                 page_no: current_page,
                 category_id: category,
             };
+           
             this.props.getTrainersList(filterQuery);
             this.setState({
                 loading: true
             });
         })
+    }
+
+    handleGenderFilter = (event) => {
+        alert(event.target.value)
     }
 
     handleSearch = (event) => {
@@ -73,6 +80,7 @@ class TrainersList extends Component{
                 search: event.target.value
             };
             this.props.getTrainersList(searchQuery);
+            //alert(( (searchQuery.search)));
             this.setState({
                 loading: true
             });
@@ -81,6 +89,7 @@ class TrainersList extends Component{
             this.setState({ loading: true });
         }
     }
+
 
     handlePageChange(pageNumber) {
         this.setState({ 
@@ -161,16 +170,7 @@ class TrainersList extends Component{
                                                 <div className="form_group_row">
                                                     <div className="form_group">
                                                         <div className="trainer__slctr" onChange={this.handleCategoryChange}>
-                                                            <select name="category">
-                                                                <option value=''>geslacht</option>
-                                                                {this.props.tr_Cat_List && this.props.tr_Cat_List ?
-                                                                    this.props.tr_Cat_List.map((cat)=>(
-                                                                        <option key={cat._id} value={cat._id}>{cat.category}</option>
-                                                                    ))
-                                                                    :
-                                                                    <></>
-                                                                }
-                                                            </select>
+                                                        <GenderFilter/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -205,16 +205,7 @@ class TrainersList extends Component{
                                                 <div className="form_group_row">
                                                     <div className="form_group">
                                                         <div className="trainer__slctr" onChange={this.handleCategoryChange}>
-                                                            <select name="category">
-                                                                <option value=''>Doel</option>
-                                                                {this.props.tr_Cat_List && this.props.tr_Cat_List ?
-                                                                    this.props.tr_Cat_List.map((cat)=>(
-                                                                        <option key={cat._id} value={cat._id}>{cat.category}</option>
-                                                                    ))
-                                                                    :
-                                                                    <></>
-                                                                }
-                                                            </select>
+                                                           <DoelFilter/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -224,6 +215,7 @@ class TrainersList extends Component{
                                         <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                                             <AgeFiltering/>
                                         </div>
+                                        {/* plaates Filtering*/}
                                         <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                                             <LocationFiltering/>
                                         </div>

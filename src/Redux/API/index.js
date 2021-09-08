@@ -324,6 +324,14 @@ export const CoupanAPI = coupon => {
     .catch(err => err);
 }
 
+export const getAllTrainer = () => {
+  return axios
+    // .get(`${URL}/users/fetch-trainer?page_no=${data.page_no}`, headers)
+    .get(`${URL}/users/fetch-trainer`, headers)
+    .then(res => res)
+    .catch(err => err);
+}
+
 export const GetTrainerListAPI = (data) => {
   let url;
   if(!data.search && data.search === undefined && !data.category_id && data.category_id === undefined){

@@ -97,7 +97,7 @@ class SubscriptionPage extends Component {
                                 <div className="col-12">
                                     <div className="heading_dp_sec subscription_heading">
                                         Kies jouw gewenste lidmaatschap
-                                        <a href="/trainer-dashboard">Go to Dashboard</a>
+                                       
                                         </div>
                                 </div>
                             </div>

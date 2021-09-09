@@ -6,10 +6,19 @@ import { Actions } from "../../Redux/Actions";
 import { createNotification } from "../../helpers";
 import Moment from "react-moment";
 import RatingStars from '../../components/RatingStars';
+var protienSum=0, carbsSum=0, fatSum=0, fiberSum=0, quantitySum=0,caloriesSum=0;
 
 class CompleteDetail extends Component {
   constructor(props) {
-   
+    props.ingredient.map( item => {
+      protienSum +=parseInt(item.protien)
+      carbsSum += parseInt(item.carbs)
+      fatSum += parseInt(item.fat)
+      fiberSum += parseInt(item.fiber)
+      quantitySum += parseInt(item.quantity)
+      caloriesSum += parseInt(item.calories)
+      
+  })
     super(props);
     this.state = {
       rating: null,
@@ -20,6 +29,7 @@ class CompleteDetail extends Component {
   }
 
   componentDidMount() {
+   
     //console.log("details props are" + this.props);
     this.props.listRating({ product_id: this.props._id });
     window.scrollTo(0, 0);
@@ -89,9 +99,9 @@ class CompleteDetail extends Component {
   render() {
     const { rating, reviews } = this.state;
     const { ratingList } = this.props;
-   
+  
     return (
-      <div>
+    <div>
         <section className="diet_paln_items our-prod-main all-products-sec complete-prod-dtl">
           <div className="red-rectangle grey-bg" />
           <div className="container">
@@ -160,6 +170,7 @@ class CompleteDetail extends Component {
                                 </thead>
                                
                                 {this.props.ingredient.map((item) => (
+                                  
                                   <tr>
                                     <td style={{border: "1px solid black"}}>{item.name}</td>
                                     <td style={{border: "1px solid black"}}>{item.protien}</td>
@@ -170,7 +181,20 @@ class CompleteDetail extends Component {
                                     <td style={{border: "1px solid black"}}>{item.calories}</td>
                                     <td style={{border: "1px solid black"}}>{item.unit}</td>
                                   </tr>
+                                  
+                                  
                                 ))}
+
+                                  <tr>
+                                    <td style={{border: "1px solid black"}}>Total</td>
+                                    <td style={{border: "1px solid black"}}>{parseInt(protienSum)}</td>
+                                    <td style={{border: "1px solid black"}}>{carbsSum}</td>
+                                    <td style={{border: "1px solid black"}}>{fatSum}</td>
+                                    <td style={{border: "1px solid black"}}>{fiberSum}</td>
+                                    <td style={{border: "1px solid black"}}>{quantitySum}</td>
+                                    <td style={{border: "1px solid black"}}>{caloriesSum}</td>
+                                    
+                                  </tr>
                               
                               </table>
                              

@@ -35,6 +35,11 @@ constructor(props){
  }
 
   render() {
+    var trainerSubscription = localStorage.getItem('subs_details');
+    var description = trainerSubscription.toString().split(',');
+    var trainerPlan = description[1].split(':');
+    trainerPlan = trainerPlan[1];
+
     return (
       <div className="diet_plan-wrap">
         <DashboardLayout {...this.props}>
@@ -42,6 +47,7 @@ constructor(props){
                <h1 className="h3 mb-0 text-gray-800 page_head_dash d-flex justify-content-between align-items-center">
                  <span>{`Welcome: ${this.state.name}`}
                 <h5>Email: {this.state.email}</h5>
+                <h5>Your Plan: {trainerPlan}</h5>
                 <Link to='/edit-profile-trainer'>
                   Edit Your Profile
                 </Link>

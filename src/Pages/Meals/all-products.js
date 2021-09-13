@@ -13,7 +13,7 @@ import Loader from "../../components/Loader/loader";
 import Pagination from "react-js-pagination";
 
 const IMG_URL = process.env.REACT_APP_IMAGE_URL;
-
+var cart1=[]
 class AllProducts extends Component {
   constructor(props) {
     super(props);
@@ -157,10 +157,16 @@ class AllProducts extends Component {
   handleAddWish = (e) => {
     if (
       localStorage.getItem("user_role") &&
-      localStorage.getItem("user_role") !== "undefined" &&
+      localStorage.getItem("user_role") != "undefined" &&
       localStorage.getItem("user_role") === "3"
     ) {
-      this.props.addWish({ product_id: e._id });
+     // this.props.addWish({ product_id: e._id });
+     cart1.push(e._id);
+      localStorage.setItem("product_id_wishlist",JSON.stringify(cart1));
+      createNotification(
+        "info",
+        "Added to wishlist!!"
+      );
     } else {
       createNotification(
         "info",

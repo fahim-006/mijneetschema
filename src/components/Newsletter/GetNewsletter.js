@@ -12,7 +12,15 @@ const GetNewsLetter = () => {
 
     return(
         <>
-            {newsletters && newsletters.map(newsletter => <h1>{newsletter}</h1>)}
+        <div className="container-fluid" style={{backgroundColor: "#ffffff"}}>
+            <div >
+            <h1 style={{display:"flex", justifyContent:"center",alignItems:"center"}}>newsletters</h1>
+        {newsletters && newsletters.map(newsletter => <p style={{color:"#000",display:"flex", justifyContent:"center",alignItems:"center"}}>{newsletter.email}</p>)}
+            </div>
+       
+      
+        </div>
+           
         </>
     )
 }

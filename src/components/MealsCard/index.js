@@ -5,6 +5,7 @@ const IMG_URL = process.env.REACT_APP_IMAGE_URL;
 
 
 const ProductCard = (props) => {
+   // alert("from mealcard"+props._id);
     return (
         <div>
             <div className="prod-lower">

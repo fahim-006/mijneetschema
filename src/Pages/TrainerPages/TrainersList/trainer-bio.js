@@ -54,9 +54,10 @@ class TrainerBio extends Component{
     }
 
     handleRequest = () => {
-        let isLogin = localStorage.getItem('user_details') && JSON.parse(localStorage.getItem('user_details'))._id;
+        let isLogin = localStorage.getItem('user_details') || JSON.parse(localStorage.getItem('user_details'))._id;
         if(isLogin){
             sendChatReq();
+            createNotification('info', 'A request was sent to the trainer.')
         }else{
             createNotification('info', 'You need to login first, to follow any trainer.')
         }

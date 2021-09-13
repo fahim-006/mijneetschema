@@ -109,6 +109,8 @@ class UserRegister extends Component {
             this.props.userRegister(requestbody);
             this.handleLoading();
             // this.props.startLoading();
+            const userDetails = {"name":name, "email":email, "mobile_number": mobile_number, "role": role}
+            localStorage.setItem("user_details", JSON.stringify(userDetails));
         }
     }
 

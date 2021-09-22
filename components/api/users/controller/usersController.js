@@ -3,6 +3,11 @@ const User = require("../../../../models/User");
 const TrainerCategory = require("../../../../models/TrainerCategory");
 const Video = require("../../../../models/Video");
 
+module.exports.fetchAlltrainers = async (req, res) => {
+  const allTrainers = await User.find();
+  return res.status(200).send(allTrainers);
+}
+
 module.exports.fetchTrainers = async (req, res) => {
   try {
     let limit = 9;

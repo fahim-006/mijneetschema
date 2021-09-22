@@ -26,6 +26,8 @@ module.exports.filterTrainer = async (req, res) => {
                     $in : filters['address']
                 }
                 console.log("args: ", args);
+                //const trainer = await User.find({"address": /.* args.address.$in *./});
+                //return res.status(200).send(trainer);
             }
             if(key === 'gender'){
                 // console.log(`key is ${key}`)
@@ -41,11 +43,24 @@ module.exports.filterTrainer = async (req, res) => {
                  }
                  console.log("args: ", args);
              }
+             if(key === 'fullname'){
+                // console.log(`key is ${key}`)
+                 args['fullname'] = {
+                     $in : filters['fullname']
+                 }
+                 console.log("args: ", args);
+             }
+             if(key === 'role'){
+                // console.log(`key is ${key}`)
+                 args['role'] = {
+                     $in : filters['role']
+                 }
+                 console.log("args: ", args);
+             }
         }
     }
 
-
-    const trainer = await User.find(args)
+    const trainer = await User.find(args);
     return res.status(200).send(trainer);
 }
 

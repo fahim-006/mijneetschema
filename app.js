@@ -44,10 +44,17 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
+
 //start newsletter
 const newsletterRouter = require('./routes/newsletterRouter')
 app.use('/api/newsletter', newsletterRouter)
 //end of newsletter
+
+//start fetch all trainer
+const alltrainerfetch = require('./routes/filterTrainerRoute')
+app.use('/api/trainer', alltrainerfetch)
+//end of fetch all trainer
+
 
 //start filtering trainer
 const filterTrainers = require('./routes/filterTrainerRoute');

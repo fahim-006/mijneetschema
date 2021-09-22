@@ -1,75 +1,55 @@
 import React from "react";
-import { useEffect, useState } from "react"
-import {getAllTrainer} from '../../../Redux/API/index'
+import { useState } from "react"
 
-const GenderFilter = () => {
-    const [trainer, setTrainer] = useState([]);
-    const [Gender, setGender] = useState([[]]);
-    const [error, setError] = useState([]);
-    var x;
-    useEffect(()=> {
-        getAllTrainer()
-            .then(response => setGender(response.data.data.trainer_list))
-            .catch(err => setError("failed"));
-        
-    }, [])
+const GenderFilter = ({genders, handleFilters}) => {
+  const [checked, setChecked] = useState([]);
+  const checkedIds = [...checked];
 
-    /*
- response.data.data.trainer_list.foreach((item, index) =>{
-                    alert("abc")
-                })
-    */
 
-    const GenderArr = () =>{
+  const handleToggle1 = e  => {
 
-        let arr= Gender.map((element) => element.gender);
-        for(var i=0; i< arr.length; i++){
-            if(arr[i]==undefined){
-                arr.splice(i,1);
-            }
-        }
-
-        let arrofUniqueGender = [...new Set(arr)]
-        return(
-            <>
-        <select>
-            <option>geslacht</option>
-        {arrofUniqueGender.map((element) => (
-            <option value={element}> {element}</option>)
-        )}
-        </select>
-        </>      
-            )
-        
-    }
-
-    const showFilters = () => {
-        return(
-            <>
-                
-                        {/*this.props.tr_Cat_List && this.props.tr_Cat_List ?
-                        this.props.tr_Cat_List.map((cat)=>(
-                        <option key={cat._id} value={cat._id}>{cat.category}</option>
-                        ))
-                        :
-                        <></>*/
-                       
-                        }
-                        
-                       {GenderArr()}
-                    
-            </>
-        )
-    }
-
+    handleFilters(e.target.value);
+}
  
+  const handleToggle = id => () => {
+      const foundId = checked.indexOf(id);
 
-    return(
-        <>
-            
-            {showFilters()}
-        </>
-    )
+      if(foundId === -1){
+          checkedIds.push(id);
+      }else{
+          checkedIds.splice(foundId, 1);
+      }
+      setChecked(checkedIds);
+      handleFilters(checkedIds);
+  }
+
+  return(
+      <>
+    <select onChange={handleToggle1}>
+
+        <option 
+                value=""
+                type = "checkbox"
+                className="form-check-input">
+                    Gender
+        </option>
+        <option 
+                value="Male"
+                type = "checkbox"
+                className="form-check-input">
+                    Male
+        </option>
+
+        <option 
+                value="Female"
+                type = "checkbox"
+                className="form-check-input">
+                    Female
+        </option>
+    </select>
+
+      </>
+  )
 }
 
 export default GenderFilter;

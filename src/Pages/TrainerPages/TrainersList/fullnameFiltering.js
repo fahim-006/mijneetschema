@@ -1,5 +1,5 @@
 import React from "react";
-const LocationFiltering = ({address, handleFilters}) =>{
+const FullnameFiltering = ({address, handleFilters}) =>{
     const handleChange = e => {
        
         handleFilters(e.target.value);
@@ -10,8 +10,8 @@ const LocationFiltering = ({address, handleFilters}) =>{
                 <div className="form_group">
                    
                         <input type="text"
-                            placeholder="plaates"  
-                            name="address"
+                            placeholder="Name"  
+                            name="fullname"
                             onChange={handleChange}
                          />
                     
@@ -22,4 +22,4 @@ const LocationFiltering = ({address, handleFilters}) =>{
 
 }
 
-export default LocationFiltering;
+export default FullnameFiltering;

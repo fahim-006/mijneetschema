@@ -15,7 +15,7 @@ const EditProfile = () =>{
         mobile_number:'',
         address: '',
         gender: '',
-        doel: [],
+        doel: '',
         leeftijd: '',
         description: '',
         facebookURL: '',
@@ -25,9 +25,10 @@ const EditProfile = () =>{
         certificates: ''
     });
 
+
     const [disabled, setDisabled] = useState(false);
     const [redirect, setRedirect] =  useState(false);
-
+    const [selected, setSelected] = useState([]);
     const {
         email,
         fullname,
@@ -45,9 +46,9 @@ const EditProfile = () =>{
     } = values;
 
     useEffect(()=> {
-        axios.get(`${API}/users/fetch-trainer`)
+        axios.get(`${API}/users/fetch-trainer/all`)
             .then(response => {
-                response.data.data.trainer_list.forEach((item, index)=>{
+                response.data.forEach((item, index)=>{
                  
     if(item.email == values.email){
      setValues({
@@ -74,14 +75,25 @@ const EditProfile = () =>{
     },[]);
 
     const handleChange = (e) => {
+       // alert(([e.target.name]))
+       if(e.target.name == 'doel'){
+            selected.push(e.target.value)
+        }
+       
+        if(e.target.name == 'doel'){
+            setValues({
+                ...values,
+                [e.target.name]: selected,
+            })
+        }
+        else{
         setValues({
             ...values,
             [e.target.name]: e.target.value,
         })
     }
-
-    const handleChangeSelect = (e) => {
     }
+
 
     const handleSubmit = () =>{
         updateTrainerProfile(values)
@@ -93,20 +105,16 @@ const EditProfile = () =>{
             .catch(err => setDisabled(false));
     }
     const doels = [
-        {/*   <select className="form-control" name="doel" value={doel} onChange={handleChange} multiple>
-        <option name="MaSelecteer een doelle" value="Selecteer een doel">Selecteer een doel</option>
-        <option name="Fat Burning - Afvallen voor vrouwen" value="Fat Burning - Afvallen voor vrouwen">Fat Burning - Afvallen voor vrouwen</option>
-        <option name="Fat Ripping - Afvallen voor mannen" Value="Fat Ripping - Afvallen voor mannen">Fat Ripping - Afvallen voor mannen</option>
-        <option name="Muscle Shaping - Spieropbouw voor vrouwen" value="Muscle Shaping - Spieropbouw voor vrouwen">Muscle Shaping - Spieropbouw voor vrouwen</option>
-        <option name="Muscle Building - Spieropbouw voor mannen" value="Muscle Building - Spieropbouw voor mannen">Muscle Building - Spieropbouw voor mannen</option>
-        <option name="Mommy - Verantwoord fit worden" value="Mommy - Verantwoord fit worden">Mommy - Verantwoord fit worden</option>
-        <option name="Pregnancy - Verantwoord fit blijven" value="Pregnancy - Verantwoord fit blijven">Pregnancy - Verantwoord fit blijven</option>
-        <option name="Running - Verbeteren van hardloopprestaties" value="Running - Verbeteren van hardloopprestaties">Running - Verbeteren van hardloopprestaties</option>
-        <option name="Obstacle Running - Verbeteren van prestaties" value="Obstacle Running - Verbeteren van prestaties">Obstacle Running - Verbeteren van prestaties</option>
-    </select>*/},
+       
         {value: 'MaSelecteer een doelle', label: 'MaSelecteer een doelle', name:'doel'},
         {value: 'Fat Burning - Afvallen voor vrouwen', label: 'Fat Burning - Afvallen voor vrouwen',name:'doel'},
         {value: 'Fat Ripping - Afvallen voor mannen', label: 'Fat Ripping - Afvallen voor mannen',name:'doel'},
+        {value: 'Muscle Shaping - Spieropbouw voor vrouwen', label: 'Muscle Shaping - Spieropbouw voor vrouwen',name:'doel'},
+        {value: 'Muscle Building - Spieropbouw voor mannen', label: 'Muscle Building - Spieropbouw voor mannen',name:'doel'},
+        {value: 'Mommy - Verantwoord fit worden', label: 'Mommy - Verantwoord fit worden',name:'doel'},
+        {value: 'Running - Verbeteren van hardloopprestaties', label: 'Running - Verbeteren van hardloopprestaties',name:'doel'},
+        {value: 'Pregnancy - Verantwoord fit blijven', label: 'Pregnancy - Verantwoord fit blijven',name:'doel'},
+        {value: 'Obstacle Running - Verbeteren van prestaties', label: 'Obstacle Running - Verbeteren van prestaties',name:'doel'},
     ]
     
     const profileForm = () => (
@@ -157,18 +165,27 @@ const EditProfile = () =>{
             {/*certificates*/}
             <label className="text-muted">Certificates:(separate using comma) </label>
             <textarea className="form-control" name="certificates" value={certificates} onChange={handleChange}/>
-
             {/*doel Checkbok*/}
             <label className="text-muted">Doel: </label>
-            <Select
-                closeMenuOnScroll={false}
-                isMulti
-                name="doel"
-                options={doels}
-                className="basic-multi-select"
-                classNamePrefix="select" 
-                onChange={handleChangeSelect}/>
             
+            <p>Selected DOEL: {`${doel},`}</p>
+            {doels.map (doel => {
+               return(
+                   <>
+                        <li>
+                            <input
+                                name="doel" 
+                                onChange={handleChange}
+                                value={doel.value}
+                                type="checkbox"
+                                className="form-check-input"
+                            />
+                            <label className="form-check-label">{doel.value}</label>
+                        </li>
+                   </>
+               )
+            })}
+            <br/>
             <label className="text-muted">Leeftijd</label>
             <input className="form-control" name="leeftijd" value={leeftijd} onChange={handleChange}/>
             <br/>
@@ -186,3 +203,15 @@ const EditProfile = () =>{
 }
 
 export default EditProfile;
+
+ {/*   <select className="form-control" name="doel" value={doel} onChange={handleChange} multiple>
+        <option name="MaSelecteer een doelle" value="Selecteer een doel">Selecteer een doel</option>
+        <option name="Fat Burning - Afvallen voor vrouwen" value="Fat Burning - Afvallen voor vrouwen">Fat Burning - Afvallen voor vrouwen</option>
+        <option name="Fat Ripping - Afvallen voor mannen" Value="Fat Ripping - Afvallen voor mannen">Fat Ripping - Afvallen voor mannen</option>
+        <option name="Muscle Shaping - Spieropbouw voor vrouwen" value="Muscle Shaping - Spieropbouw voor vrouwen">Muscle Shaping - Spieropbouw voor vrouwen</option>
+        <option name="Muscle Building - Spieropbouw voor mannen" value="Muscle Building - Spieropbouw voor mannen">Muscle Building - Spieropbouw voor mannen</option>
+        <option name="Mommy - Verantwoord fit worden" value="Mommy - Verantwoord fit worden">Mommy - Verantwoord fit worden</option>
+        <option name="Pregnancy - Verantwoord fit blijven" value="Pregnancy - Verantwoord fit blijven">Pregnancy - Verantwoord fit blijven</option>
+        <option name="Running - Verbeteren van hardloopprestaties" value="Running - Verbeteren van hardloopprestaties">Running - Verbeteren van hardloopprestaties</option>
+        <option name="Obstacle Running - Verbeteren van prestaties" value="Obstacle Running - Verbeteren van prestaties">Obstacle Running - Verbeteren van prestaties</option>
+    </select>*/}

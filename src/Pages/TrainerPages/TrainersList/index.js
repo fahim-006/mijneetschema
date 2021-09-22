@@ -11,6 +11,7 @@ import LocationFiltering from './LocationFiltering';
 import { createNotification } from '../../../helpers';
 import DoelFilter from './doelFilter'
 import GenderFilter from './genderFilter';
+import { getFilteredTrainer } from '../../../Redux/API/apiFiltering';
 
 class TrainersList extends Component{
     constructor(props){
@@ -21,10 +22,16 @@ class TrainersList extends Component{
             current_page: 1,
             loading: true,
             category: '',
+            gender: '',
+            selectedOption: 'select',
+            filters :{
+                gender: []
+            }
         }
     }
 
     componentDidMount(){
+        //console.log("getTrainersListtt  ::  "+  this.props.getTrainersList())
         this.props.getTrainersList({page_no: this.state.current_page});
         this.props.getTrainerCat();
     }
@@ -51,6 +58,7 @@ class TrainersList extends Component{
     }
 
     handleCategoryChange = (event) => {
+       
         this.setState({
             [event.target.name]: event.target.value
         }, () => {
@@ -59,7 +67,7 @@ class TrainersList extends Component{
                 page_no: current_page,
                 category_id: category,
             };
-           
+            
             this.props.getTrainersList(filterQuery);
             this.setState({
                 loading: true
@@ -67,9 +75,7 @@ class TrainersList extends Component{
         })
     }
 
-    handleGenderFilter = (event) => {
-        alert(event.target.value)
-    }
+
 
     handleSearch = (event) => {
         if(event.target.value.length > 2){
@@ -79,6 +85,9 @@ class TrainersList extends Component{
                 category_id: category,
                 search: event.target.value
             };
+            
+          
+            alert(this.props.getTrainersList(searchQuery.category_id))
             this.props.getTrainersList(searchQuery);
             //alert(( (searchQuery.search)));
             this.setState({
@@ -100,6 +109,26 @@ class TrainersList extends Component{
             this.props.getTrainersList({page_no: pageNumber}) : 
             this.props.getTrainersList({page_no: pageNumber, category_id: this.state.category})
         });
+    }
+
+    handleFilters = (event) => {
+        this.setState({selectedOption : event.target.value})
+
+        alert(`myfilters= ${this.state.selectedOption}`);
+        
+        const newFilters = {...this.state.filters};
+
+        newFilters["gender"]=this.state.selectedOption;
+
+        //if(filterBy == "gender"){
+            //newFilters[filterBy] = myfilters;
+        //}
+        
+       //this.setState({filters: newFilters})
+        //{trainerList.trainer_list : response.data}
+        getFilteredTrainer(newFilters)
+           .then(response => (console.log("this" + response.data)))
+         .catch(err=> console.log("failed to load"))
     }
 
     render(){
@@ -169,8 +198,16 @@ class TrainersList extends Component{
                                           <div className="trainer_select_wrap">
                                                 <div className="form_group_row">
                                                     <div className="form_group">
-                                                        <div className="trainer__slctr" onChange={this.handleCategoryChange}>
-                                                        <GenderFilter/>
+                                                        <div className="trainer__slctr">
+                                                        {/*<GenderFilter 
+                                                            handleFilters={myfilters => this.handleFilters(myfilters, "gender")} 
+                                                        />*/}
+
+                                                        <select name="gender" onChange={this.handleFilters} value={this.state.selectedOption}>
+                                                                <option>geslacht</option>
+                                                                <option value="Male">Male</option>
+                                                                <option value="Female">Female</option>
+                                                        </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -217,9 +254,8 @@ class TrainersList extends Component{
                                         </div>
                                         {/* plaates Filtering*/}
                                         <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                                            <LocationFiltering/>
+                                            <LocationFiltering  onChange={this.handleSearch}/>
                                         </div>
-
 
                                         <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                                             <div className="trainer_select_wrap">

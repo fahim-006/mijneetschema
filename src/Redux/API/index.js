@@ -324,6 +324,25 @@ export const CoupanAPI = coupon => {
     .catch(err => err);
 }
 
+export const getAllTrainer1 = () => {
+  return axios
+    // .get(`${URL}/users/fetch-trainer?page_no=${data.page_no}`, headers)
+    .get(`${URL}/users/fetch-trainer/all`, headers)
+    .then(res => res)
+    .catch(err => err);
+}
+
+export const getFilteredTrainer = (filters = {}) => {
+  const data = {
+    filters: {...filters}
+  }
+  return axios.post(`${URL}/users/fetch-trainer/filter`, data, {
+    headers:{
+      "Content-type" : "application/json"
+    }
+  })
+}
+
 export const getAllTrainer = () => {
   return axios
     // .get(`${URL}/users/fetch-trainer?page_no=${data.page_no}`, headers)

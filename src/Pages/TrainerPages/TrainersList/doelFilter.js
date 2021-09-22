@@ -2,74 +2,95 @@ import React from "react";
 import { useEffect, useState } from "react"
 import {getAllTrainer} from '../../../Redux/API/index'
 
-const DoelFilter = () => {
-    const [trainer, setTrainer] = useState([]);
-    const [doel, setDoel] = useState([[]]);
-    const [error, setError] = useState([]);
-    var x;
-    useEffect(()=> {
-        getAllTrainer()
-            .then(response => setDoel(response.data.data.trainer_list))
-            .catch(err => setError("failed"));
-        
-    }, [])
+const DoelFilter= ({doels, handleFilters}) => {
+    const [checked, setChecked] = useState([]);
+    const checkedIds = [...checked];
 
-    /*
- response.data.data.trainer_list.foreach((item, index) =>{
-                    alert("abc")
-                })
-    */
+    const handleToggle1 = e  => {
 
-    const doelArr = () =>{
+        handleFilters(e.target.value);
+    }
 
-        let arr= doel.map((element) => element.doel);
-        for(var i=0; i< arr.length; i++){
-            if(arr[i]==undefined){
-                arr.splice(i,1);
-            }
+    const handleToggle = id => () => {
+        const foundId = checked.indexOf(id);
+  
+        if(foundId === -1){
+            checkedIds.push(id);
+        }else{
+            checkedIds.splice(foundId, 1);
         }
-
-        let arrofUniqueDoel = [...new Set(arr)]
-        return(
-            <>
-        <select>
-        <option>Doel</option>
-        {arrofUniqueDoel.map((element) => (
-            <option> {element}</option>)
-        )}
-        </select>
-        </>      
-            )
         
+        setChecked(checkedIds);
+        handleFilters(checkedIds);
     }
-
-    const showFilters = () => {
-        return(
-            <>
-                
-                        {/*this.props.tr_Cat_List && this.props.tr_Cat_List ?
-                        this.props.tr_Cat_List.map((cat)=>(
-                        <option key={cat._id} value={cat._id}>{cat.category}</option>
-                        ))
-                        :
-                        <></>*/
-                       
-                        }
-                        
-                       {doelArr()}
-                    
-            </>
-        )
-    }
-
- 
-
+  
     return(
+        
         <>
-            
-            {showFilters()}
+        <select onChange={handleToggle1}>
+        <option 
+                value=""
+                type = "checkbox"
+                className="form-check-input">
+                    Doel
+        </option>
+            <option value={"MaSelecteer een doelle"}
+                    type = "checkbox"
+                    className="form-check-input">
+                    MaSelecteer een doelle    
+            </option>
+
+            <option value={"Fat Burning - Afvallen voor vrouwen"}
+                    type = "checkbox"
+                    className="form-check-input">
+                    Fat Burning - Afvallen voor vrouwen    
+            </option>
+
+            <option value={"Fat Ripping - Afvallen voor mannen"}
+                    type = "checkbox"
+                    className="form-check-input">
+                    Fat Ripping - Afvallen voor mannen    
+            </option>
+
+            <option value={"Mommy - Verantwoord fit worden"}
+                    type = "checkbox"
+                    className="form-check-input">
+                    Mommy - Verantwoord fit worden   
+            </option>
+
+            <option value={"Muscle Shaping - Spieropbouw voor vrouwen"}
+                    type = "checkbox"
+                    className="form-check-input">
+                    Muscle Shaping - Spieropbouw voor vrouwen    
+            </option>
+
+            <option value={"Muscle Building - Spieropbouw voor mannen"}
+                    type = "checkbox"
+                    className="form-check-input">
+                    Muscle Building - Spieropbouw voor mannen    
+            </option>
+
+            <option value={"Running - Verbeteren van hardloopprestaties"}
+                    type = "checkbox"
+                    className="form-check-input">
+                    Running - Verbeteren van hardloopprestaties   
+            </option>
+
+            <option value={"Obstacle Running - Verbeteren van prestaties"}
+                    type = "checkbox"
+                    className="form-check-input">
+                    Obstacle Running - Verbeteren van prestaties   
+            </option>
+
+            <option value={"Pregnancy - Verantwoord fit blijven"}
+                    type = "checkbox"
+                    className="form-check-input">
+                    Pregnancy - Verantwoord fit blijven   
+            </option>
+
+        </select>
         </>
     )
-}
+  }
 
 export default DoelFilter;

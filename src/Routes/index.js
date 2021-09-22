@@ -43,6 +43,8 @@ import DietPlan from '../Pages/User/DietPlan';
 import CalculationResult from '../components/CalculationResult';
 import CreateNewsletter from '../components/Newsletter/createNewsletter';
 import GetNewsLetter from '../components/Newsletter/GetNewsletter';
+import TrainersLists from '../Pages/TrainerPages/TrainersList/main';
+import TrainerLists from '../Pages/TrainerPages/TrainersList/main';
 
 const Routes = (props) => (
 	<div>
@@ -69,7 +71,8 @@ const Routes = (props) => (
 			<Route path="/meals" component={MealsPage} />
 			<Route path="/meal-detail/:id" component={MealDetail} />
 {/* -----meals----- */}
-			<Route path="/trainers-list" component={TrainersList}/>
+			<Route path="/trainers-list" component={TrainerLists}/>
+			{/*<Route path="/trainers-list-all" component={TrainersList}/>*/}
 			<Route path="/trainer-profile/:id" component={TrainerDetail}/>
 			<Route path="/trainer-dashboard" component={TrainerDashboard} />
 

@@ -18,9 +18,9 @@ constructor(props){
   gender: ''
  }
 
-  axios.get(`${API}/users/fetch-trainer`)
+  axios.get(`${API}/users/fetch-trainer/all`)
   .then(response => {
-    response.data.data.trainer_list.forEach((item, index)=>{
+    response.data.forEach((item, index)=>{
       if(item.email == this.state.email){
        this.setState({
           name: item.fullname,

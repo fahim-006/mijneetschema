@@ -3,8 +3,6 @@ import DashboardEditLayout from '../../../layouts/DashboardEditLayout'
 import axios from "axios";
 import { auto } from "async";
 import {updateTrainerProfile} from '../../../Redux/API/apiUpdateProfile'
-import LocationSearchInput from '../../../Pages/TrainerPages/Address';
-import Select from 'react-select'
 const API = process.env.REACT_APP_API_URL;
 
 
@@ -24,6 +22,10 @@ const EditProfile = () =>{
         expertise: '',
         certificates: ''
     });
+
+    const [inputList, setInputList] = useState([{ expertise: ""}]);
+    const [inputList1, setInputList1] = useState([{ certificates: ""}]);
+
 
 
     const [disabled, setDisabled] = useState(false);
@@ -104,6 +106,59 @@ const EditProfile = () =>{
             })
             .catch(err => setDisabled(false));
     }
+
+    // handle input change
+  const handleInputChange = (e, index) => {
+    const { name, value } = e.target;
+    const list = [...inputList];
+    list[index][name] = value;
+    setInputList(list);
+
+    const Main = Object.values (inputList).map (expp => expp.expertise)
+    setValues({
+        ...values,
+        [name]:Main
+    })
+  };
+
+  const handleInputChange1 = (e, index) => {
+    const { name1, value1 } = e.target;
+    const list1 = [...inputList1];
+    list1[index][name1] = value1;
+    setInputList1(list1);
+
+    const Main1 = Object.values (inputList1).map (cert => cert.certificates)
+    setValues({
+        ...values,
+        [name1]:Main1
+    })
+  };
+
+  // handle click event of the Remove button
+  const handleRemoveClick = index => {
+    const list = [...inputList];
+    list.splice(index, 1);
+    setInputList(list);
+  };
+
+    // handle click event of the Remove button
+    const handleRemoveClick1 = index => {
+        const list1 = [...inputList1];
+        list1.splice(index, 1);
+        setInputList1(list1);
+      };
+
+  // handle click event of the Add button
+  const handleAddClick = () => {
+    //inputList.concat(...inputList, ',')
+    setInputList([...inputList, { expertise: "" }]);
+  };
+
+    // handle click event of the Add button
+    const handleAddClick1 = () => {
+        //inputList.concat(...inputList, ',')
+        setInputList1([...inputList1, { certificates: "" }]);
+      };
     const doels = [
        
         {value: 'MaSelecteer een doelle', label: 'MaSelecteer een doelle', name:'doel'},
@@ -116,6 +171,8 @@ const EditProfile = () =>{
         {value: 'Pregnancy - Verantwoord fit blijven', label: 'Pregnancy - Verantwoord fit blijven',name:'doel'},
         {value: 'Obstacle Running - Verbeteren van prestaties', label: 'Obstacle Running - Verbeteren van prestaties',name:'doel'},
     ]
+
+    
     
     const profileForm = () => (
         <form style={{margin: "0 auto"}} onSubmit={handleSubmit} style={{width: "100%"}}>
@@ -160,11 +217,50 @@ const EditProfile = () =>{
 
              {/*expertise*/}
              <label className="text-muted">Expertise: (separate using comma) </label>
-            <textarea className="form-control" name="expertise" value={expertise} onChange={handleChange}/>
+             {inputList.map((x, i) => {
+        return (
+          <div className="box">
+            <input
+              name="expertise"
+              placeholder="expertise"
+              value={x.expertise}
+              onChange={e => handleInputChange(e, i)}
+            />
+           &nbsp;
+              {inputList.length !== 1 && <button className="btn btn-sm btn-danger"
+                onClick={() => handleRemoveClick(i)}>Remove</button>}&nbsp;
+              {inputList.length - 1 === i && <button className="btn btn-sm btn-info" onClick={handleAddClick}>Add</button>}
+          
+          </div>
+        );
+      })}
+            <input className="form-control" name="expertise" value={expertise} onChange={handleChange}/>
+
+
+
 
             {/*certificates*/}
             <label className="text-muted">Certificates:(separate using comma) </label>
-            <textarea className="form-control" name="certificates" value={certificates} onChange={handleChange}/>
+            {inputList1.map((x, i) => {
+        return (
+          <div className="box">
+            <input
+              name="certificates"
+              placeholder="certificates"
+              value="vrtsdlfkgh"
+              onChange={e => handleInputChange1(e, i)}
+            />
+           &nbsp;
+              {inputList1.length !== 1 && <button className="btn btn-sm btn-danger"
+                onClick={() => handleRemoveClick1(i)}>Remove</button>}&nbsp;
+              {inputList1.length - 1 === i && <button className="btn btn-sm btn-info" onClick={handleAddClick1}>Add</button>}
+          
+          </div>
+        );
+      })}
+            <input className="form-control" name="certificates" value={certificates} onChange={handleChange}/>
+
+
             {/*doel Checkbok*/}
             <label className="text-muted">Doel: </label>
             

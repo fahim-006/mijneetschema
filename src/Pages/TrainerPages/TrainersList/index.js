@@ -10,7 +10,6 @@ import AgeFiltering from './ageFiltering';
 import LocationFiltering from './LocationFiltering';
 import { createNotification } from '../../../helpers';
 import DoelFilter from './doelFilter'
-import GenderFilter from './genderFilter';
 import { getFilteredTrainer } from '../../../Redux/API/apiFiltering';
 
 class TrainersList extends Component{
@@ -356,13 +355,7 @@ class TrainersList extends Component{
                                         </div>
                                     </div>
                                 </div>
-                        </section>
-
-
-                  
-
-                    
-                    
+                        </section>                   
                 </div>
             </UserLayout>
         )

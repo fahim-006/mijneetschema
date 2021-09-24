@@ -11,6 +11,7 @@ import { Actions } from "../../Redux/Actions";
 import { createNotification } from "../../helpers";
 import Loader from "../../components/Loader/loader";
 import Pagination from "react-js-pagination";
+import { AddWishAPI } from "../../Redux/API";
 
 const IMG_URL = process.env.REACT_APP_IMAGE_URL;
 var cart1=[]
@@ -160,6 +161,13 @@ class AllProducts extends Component {
       localStorage.getItem("user_role") != "undefined" &&
       localStorage.getItem("user_role") === "3"
     ) {
+      AddWishAPI({product_id: e._id})
+        .then(response => {
+          if(response.status === 200){
+              alert("added to wishlist!");
+          }
+        })
+        .catch(err => alert(err.message))
      // this.props.addWish({ product_id: e._id });
      cart1.push(e._id);
       localStorage.setItem("product_id_wishlist",JSON.stringify(cart1));

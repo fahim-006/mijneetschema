@@ -22,10 +22,10 @@ const EditProfile = () =>{
         expertise: '',
         certificates: ''
     });
-
+    const [inputList1, setInputList1] = useState([{certificates: ""}]);
     const [inputList, setInputList] = useState([{ expertise: ""}]);
-    const [inputList1, setInputList1] = useState([{ certificates: ""}]);
-
+  
+   
 
 
     const [disabled, setDisabled] = useState(false);
@@ -98,6 +98,7 @@ const EditProfile = () =>{
 
 
     const handleSubmit = () =>{
+      alert("tess")
         updateTrainerProfile(values)
             .then(response => {
                 if(response.status === 200) {
@@ -121,18 +122,19 @@ const EditProfile = () =>{
     })
   };
 
-  const handleInputChange1 = (e, index) => {
-    const { name1, value1 } = e.target;
-    const list1 = [...inputList1];
-    list1[index][name1] = value1;
-    setInputList1(list1);
-
-    const Main1 = Object.values (inputList1).map (cert => cert.certificates)
-    setValues({
-        ...values,
-        [name1]:Main1
-    })
-  };
+      // handle input change
+      const handleInputChange1 = (e, index) => {
+        const { name, value } = e.target;
+        const list = [...inputList1];
+        list[index][name] = value;
+        setInputList1(list);
+    
+        const Main = Object.values (inputList1).map (cert => cert.certificates)
+        setValues({
+            ...values,
+            [name]:Main
+        })
+      };
 
   // handle click event of the Remove button
   const handleRemoveClick = index => {
@@ -141,24 +143,23 @@ const EditProfile = () =>{
     setInputList(list);
   };
 
-    // handle click event of the Remove button
-    const handleRemoveClick1 = index => {
-        const list1 = [...inputList1];
-        list1.splice(index, 1);
-        setInputList1(list1);
-      };
+  const handleRemoveClick1 = index => {
+    const list = [...inputList1];
+    list.splice(index, 1);
+    setInputList1(list);
+  };
 
+    // handle click event of the Remove button
+  // handle click event of the Remove button
   // handle click event of the Add button
   const handleAddClick = () => {
-    //inputList.concat(...inputList, ',')
     setInputList([...inputList, { expertise: "" }]);
   };
 
-    // handle click event of the Add button
-    const handleAddClick1 = () => {
-        //inputList.concat(...inputList, ',')
-        setInputList1([...inputList1, { certificates: "" }]);
-      };
+  const handleAddClick1 = () => {
+    setInputList1([...inputList1, {certificates: ""}])
+  };
+
     const doels = [
        
         {value: 'MaSelecteer een doelle', label: 'MaSelecteer een doelle', name:'doel'},
@@ -175,7 +176,7 @@ const EditProfile = () =>{
     
     
     const profileForm = () => (
-        <form style={{margin: "0 auto"}} onSubmit={handleSubmit} style={{width: "100%"}}>
+        <form style={{margin: "0 auto"}} style={{width: "100%"}}>
             <label className="text-muted">Full Name: </label>
             <input className="form-control" name="fullname" value={fullname} onChange={handleChange}/>
             
@@ -228,8 +229,8 @@ const EditProfile = () =>{
             />
            &nbsp;
               {inputList.length !== 1 && <button className="btn btn-sm btn-danger"
-                onClick={() => handleRemoveClick(i)}>Remove</button>}&nbsp;
-              {inputList.length - 1 === i && <button className="btn btn-sm btn-info" onClick={handleAddClick}>Add</button>}
+                onClick={() => handleRemoveClick(i)}>Remove Expertise</button>}&nbsp;
+              {inputList.length - 1 === i && <button className="btn btn-sm btn-info" onClick={handleAddClick}>Add Expertise</button>}
           
           </div>
         );
@@ -241,23 +242,24 @@ const EditProfile = () =>{
 
             {/*certificates*/}
             <label className="text-muted">Certificates:(separate using comma) </label>
-            {inputList1.map((x, i) => {
+          
+            {inputList1.map((y, j) => {
         return (
           <div className="box">
             <input
               name="certificates"
               placeholder="certificates"
-              value="vrtsdlfkgh"
-              onChange={e => handleInputChange1(e, i)}
+              value={y.certificates}
+              onChange={e => handleInputChange1(e, j)}
             />
            &nbsp;
               {inputList1.length !== 1 && <button className="btn btn-sm btn-danger"
-                onClick={() => handleRemoveClick1(i)}>Remove</button>}&nbsp;
-              {inputList1.length - 1 === i && <button className="btn btn-sm btn-info" onClick={handleAddClick1}>Add</button>}
-          
-          </div>
+                onClick={() => handleRemoveClick1(j)}>Remove Certificate</button>}&nbsp;
+              {inputList1.length - 1 === j && <button className="btn btn-sm btn-info" onClick={handleAddClick1}>Add Certificate</button>}
+              </div>
         );
       })}
+
             <input className="form-control" name="certificates" value={certificates} onChange={handleChange}/>
 
 
@@ -285,7 +287,7 @@ const EditProfile = () =>{
             <label className="text-muted">Leeftijd</label>
             <input className="form-control" name="leeftijd" value={leeftijd} onChange={handleChange}/>
             <br/>
-            <button type="submit" className="btn btn-primary float-right" disabled={disabled}>Update My Profile</button>
+            <button type="submit" className="btn btn-primary float-right" onClick={handleSubmit} disabled={disabled}>Update My Profile</button>
         </form>
     )
 
